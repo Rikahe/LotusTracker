@@ -4,8 +4,7 @@
 #include <QProcess>
 
 LinuxWindowFinder::LinuxWindowFinder()
-{
-}
+= default;
 
 int LinuxWindowFinder::findWindowId(const QString& name)
 {
@@ -13,8 +12,9 @@ int LinuxWindowFinder::findWindowId(const QString& name)
   process.setProgram("xdotool");
   process.setArguments(QStringList() << "search" << name);
   process.start();
-  while (process.state() != QProcess::NotRunning)
+  while (process.state() != QProcess::NotRunning) {
     qApp->processEvents();
+}
   return process.readAll().toInt();
 }
 
@@ -24,7 +24,8 @@ bool LinuxWindowFinder::isWindowFocused(int wId)
   process.setProgram("xdotool");
   process.setArguments(QStringList() << "getwindowfocus");
   process.start();
-  while (process.state() != QProcess::NotRunning)
+  while (process.state() != QProcess::NotRunning) {
     qApp->processEvents();
+}
   return process.readAll().toInt() == wId;
 }

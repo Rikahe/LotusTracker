@@ -76,18 +76,18 @@ public:
   void showPreferencesScreen();
   void showMessage(QString msg, QString title = tr("Lotus Tracker"));
   void publishOrUpdatePlayerDeck(Deck deck);
-  void trackException(LotusException ex);
+  void trackException(const LotusException& ex);
   // Just for Tests
   void setEventInfo(QString eventName, QString eventType);
 
 signals:
 
 private slots:
-  void onPlayerCollectionUpdated(QMap<int, int> ownedCards);
+  void onPlayerCollectionUpdated(const QMap<int, int>& ownedCards);
   void onPlayerDecks(QList<Deck> playerDecks);
   void onDeckSubmited(QString eventId, Deck deck);
-  void onEventPlayerCourse(QString eventId, Deck currentDeck, bool isFinished);
-  void onMatchStart(QString eventId, OpponentInfo match);
+  void onEventPlayerCourse(const QString& eventId, const Deck& currentDeck, bool isFinished);
+  void onMatchStart(const QString& eventId, OpponentInfo match);
   void onGameStart(MatchMode mode, QList<MatchZone> zones, int seatId);
   void onGameStarted();
   void onGameFocusChanged(bool hasFocus);
@@ -102,7 +102,7 @@ private slots:
   void onUserTokenRefreshed();
   void onUserTokenRefreshError();
   void onDraftPick(int mtgaId, int packNumber, int pickNumber);
-  void onDraftStatus(QString eventName, QString status, int packNumber, int pickNumber, QList<Card*> availablePicks,
+  void onDraftStatus(QString eventName, const QString& status, int packNumber, int pickNumber, QList<Card*> availablePicks,
                      QList<Card*> pickedCards);
 };
 

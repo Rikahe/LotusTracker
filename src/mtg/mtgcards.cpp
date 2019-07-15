@@ -14,6 +14,7 @@
 #include <QStandardPaths>
 #include <QUrl>
 #include <QUrlQuery>
+#include <utility>
 
 MtgCards::MtgCards(QObject* parent) : QObject(parent)
 {
@@ -63,7 +64,7 @@ void MtgCards::updateMtgaSetsFromAPI()
 
 void MtgCards::updateMtgaSetsFromAPIRequestOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -82,14 +83,14 @@ void MtgCards::updateMtgaSetsFromAPIRequestOnFinish()
 
   LOGD(QString("Mtga Sets downloaded. %1 sets.").arg(jsonRsp.size()));
 
-  for (QString setCode : jsonRsp.keys())
+  for (const QString& setCode : jsonRsp.keys())
   {
     QString setCodeVersion = QString("%1_%2").arg(setCode).arg(jsonRsp[setCode].toString());
     loadSet(setCodeVersion);
   }
 }
 
-void MtgCards::loadSet(QString setCodeVersion)
+void MtgCards::loadSet(const QString& setCodeVersion)
 {
   QFile setFile(setsDir + QDir::separator() + setCodeVersion + ".json");
   if (QFileInfo(setFile).exists())
@@ -102,7 +103,7 @@ void MtgCards::loadSet(QString setCodeVersion)
   }
 }
 
-void MtgCards::downloadSet(QString setCodeVersion)
+void MtgCards::downloadSet(const QString& setCodeVersion)
 {
   QString setCode = setCodeVersion.split("_")[0];
   QString version = setCodeVersion.split("_")[1];
@@ -119,7 +120,7 @@ void MtgCards::downloadSet(QString setCodeVersion)
 
 void MtgCards::downloadSetOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QByteArray jsonData = reply->readAll();
 
   QString setUrl = reply->url().toString();
@@ -156,7 +157,7 @@ void MtgCards::downloadSetOnFinish()
   loadSetFromFile(setCodeVersion + ".json");
 }
 
-void MtgCards::loadSetFromFile(QString setFileName)
+void MtgCards::loadSetFromFile(const QString& setFileName)
 {
   QString setCode = setFileName.split("_")[0];
   LOGD(QString("Loading %1").arg(setCode));
@@ -235,7 +236,7 @@ Card* MtgCards::jsonObject2Card(QJsonObject jsonCard, QString setCode)
   }
   // Mana color
   QString rawManaCost = jsonCard["manaCost"].toString();
-  QRegularExpression reManaSymbol("(?<=\\{)[\\w,\\/]+(?=\\})");
+  QRegularExpression reManaSymbol(R"((?<=\{)[\w,\/]+(?=\}))");
   QRegularExpressionMatchIterator iterator = reManaSymbol.globalMatch(rawManaCost);
   QList<QString> manaSymbols;
   while (iterator.hasNext())
@@ -255,7 +256,7 @@ Card* MtgCards::jsonObject2Card(QJsonObject jsonCard, QString setCode)
   {
     borderColors = getLandBorderColorUsingColorIdentity(jsonCard);
   }
-  return new Card(mtgaId, multiverseId, setCode, number, rarity, name, type, layout, cmc, rawManaCost, manaSymbols,
+  return new Card(mtgaId, multiverseId, std::move(setCode), number, rarity, name, type, layout, cmc, rawManaCost, manaSymbols,
                   borderColors, colorIdentity, imageUrl, lvsRank, lvsDesc, isLand, isArtifact);
 }
 

@@ -8,7 +8,7 @@ PreferencesScreen::PreferencesScreen(QWidget* parent) : QMainWindow(parent), ui(
   setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint | Qt::MSWindowsFixedSizeDialogHint);
   setWindowTitle(TITLE());
 
-  QActionGroup* group = new QActionGroup(this);
+  auto* group = new QActionGroup(this);
   group->setExclusive(true);
 
   ui->actionGeneral->setActionGroup(group);
@@ -31,9 +31,9 @@ PreferencesScreen::PreferencesScreen(QWidget* parent) : QMainWindow(parent), ui(
   tabs[3] = tabAbout;
 
   QLayout* layout = ui->preferencesWidget->layout();
-  for (int i = 0; i < NUM_TABS; i++)
+  for (auto & tab : tabs)
   {
-    layout->addWidget(tabs[i]);
+    layout->addWidget(tab);
   }
 
   connect(group, &QActionGroup::triggered, this, &PreferencesScreen::tabClick);
@@ -74,9 +74,9 @@ TabAbout* PreferencesScreen::getTabAbout()
 void PreferencesScreen::tabClick(QAction* action)
 {
   int pageIndex = action->property("pageIndex").toInt();
-  for (int i = 0; i < NUM_TABS; i++)
+  for (auto & tab : tabs)
   {
-    tabs[i]->hide();
+    tab->hide();
   }
   ui->statusBar->hide();
   if (tabs[pageIndex] == tabGeneral || tabs[pageIndex] == tabOverlay)

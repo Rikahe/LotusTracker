@@ -1,4 +1,6 @@
 #include "mtgamatch.h"
+
+#include <utility>
 #include "../macros.h"
 
 MtgaMatch::MtgaMatch(QObject* parent, MtgCards* mtgCards) : QObject(parent), mtgCards(mtgCards), isRunning(false)
@@ -27,7 +29,7 @@ void MtgaMatch::onStartNewMatch(QString eventId, OpponentInfo opponentInfo)
   {
     onEndCurrentMatch(0);
   }
-  matchInfo = MatchInfo(eventId, opponentInfo);
+  matchInfo = MatchInfo(std::move(eventId), std::move(opponentInfo));
   player = MatchPlayer();
   opponent = MatchPlayer();
   // don't clear playerRankInfo because it is set before startNewMatch
@@ -82,7 +84,7 @@ void MtgaMatch::onGameCompleted(Deck opponentDeck, QMap<int, int> teamIdWins)
   {
     return;
   }
-  matchInfo.currentGame().opponentDeck = opponentDeck;
+  matchInfo.currentGame().opponentDeck = std::move(opponentDeck);
   int playerCurrentWins = 0;
   for (int i = 0; i < matchInfo.games.size() - 1; i++)
   {
@@ -111,10 +113,10 @@ void MtgaMatch::onEndCurrentMatch(int winningTeamId)
 
 void MtgaMatch::onPlayerRankInfo(QPair<QString, int> playerRankInfo)
 {
-  this->playerRankInfo = playerRankInfo;
+  this->playerRankInfo = std::move(playerRankInfo);
 }
 
-void MtgaMatch::onPlayerTakesMulligan(QMap<int, int> newHandDrawed)
+void MtgaMatch::onPlayerTakesMulligan(const QMap<int, int>& newHandDrawed)
 {
   if (!isRunning)
   {

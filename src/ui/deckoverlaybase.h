@@ -80,9 +80,9 @@ protected:
   // Draw fields and methods
   QPen bgPen, cardPen, cardNonePen, titlePen;
   QFont cardFont, titleFont;
-  void drawText(QPainter& painter, QFont textFont, QPen textPen, QString text, int textOptions, bool shadow, int textX,
+  void drawText(QPainter& painter, const QFont& textFont, const QPen& textPen, const QString& text, int textOptions, bool shadow, int textX,
                 int textY, int textHeight, int textWidth);
-  void drawMana(QPainter& painter, QString manaSymbol, int manaSize, bool grayscale, int manaX, int manaY);
+  void drawMana(QPainter& painter, const QString& manaSymbol, int manaSize, bool grayscale, int manaX, int manaY);
 
 public:
   explicit DeckOverlayBase(QWidget* parent = nullptr);

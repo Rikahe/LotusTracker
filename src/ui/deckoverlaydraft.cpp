@@ -7,6 +7,7 @@
 #include <QPoint>
 #include <QToolTip>
 #include <QtMath>
+#include <utility>
 
 DeckOverlayDraft::DeckOverlayDraft(QWidget* parent) : DeckOverlayBase(parent)
 {
@@ -16,8 +17,7 @@ DeckOverlayDraft::DeckOverlayDraft(QWidget* parent) : DeckOverlayBase(parent)
 }
 
 DeckOverlayDraft::~DeckOverlayDraft()
-{
-}
+= default;
 
 void DeckOverlayDraft::applyCurrentSettings()
 {
@@ -72,10 +72,10 @@ int DeckOverlayDraft::cardHoverMarginBottom(QPainter& painter)
 {
   int lines = 0;
   float ratio = isShowCardManaCostEnabled ? 4 : 3.5f;
-  int heightRaw = static_cast<int>(uiWidth / ratio);
+  auto heightRaw = static_cast<int>(uiWidth / ratio);
   if (currentSource == "lsv")
   {
-    int width = static_cast<int>(uiWidth * 1.5);
+    auto width = static_cast<int>(uiWidth * 1.5);
 
     painter.setFont(cardFont);
     float descWidth = painter.fontMetrics().width(hoverCard->lsvDesc);
@@ -161,7 +161,7 @@ void DeckOverlayDraft::drawHoverCard(QPainter& painter)
   // LVS Desc BG
   int bottomMargin = 10;
   int height = cardHoverMarginBottom(painter);
-  int width = static_cast<int>(uiWidth * 1.6);
+  auto width = static_cast<int>(uiWidth * 1.6);
   QString desc = "";
   if (currentSource == "lsv")
   {
@@ -218,16 +218,16 @@ void DeckOverlayDraft::reset()
 
 void DeckOverlayDraft::setPlayerCollection(QMap<int, int> ownedCards)
 {
-  playerCollection = ownedCards;
+  playerCollection = std::move(ownedCards);
   if (!availablePicks.isEmpty())
   {
     udpateAvailableCardsList(availablePicks, pickedCards);
   }
 }
 
-void DeckOverlayDraft::onDraftStatus(QString eventName, QList<Card*> availablePicks, QList<Card*> pickedCards)
+void DeckOverlayDraft::onDraftStatus(QString eventName, const QList<Card*>& availablePicks, const QList<Card*>& pickedCards)
 {
-  this->eventName = eventName;
+  this->eventName = std::move(eventName);
   this->availablePicks = availablePicks;
   this->pickedCards = pickedCards;
   if (playerCollection.keys().isEmpty())
@@ -239,7 +239,7 @@ void DeckOverlayDraft::onDraftStatus(QString eventName, QList<Card*> availablePi
 
 void DeckOverlayDraft::onSourceChanged(QString source)
 {
-  currentSource = source;
+  currentSource = std::move(source);
   update();
 }
 

@@ -30,7 +30,7 @@ void TrayIcon::setupTrayIcon()
   trayIcon = new QSystemTrayIcon();
   trayIcon->setToolTip(QString("%1 - %2").arg(qApp->applicationName()).arg(qApp->applicationVersion()));
   connect(trayIcon, &QSystemTrayIcon::activated, this, &TrayIcon::TrayIconActivated);
-  QMenu* trayMenu = new QMenu();
+  auto* trayMenu = new QMenu();
   trayIcon->setContextMenu(trayMenu);
 
 #if defined Q_OS_MAC
@@ -83,7 +83,7 @@ void TrayIcon::TrayIconActivated(QSystemTrayIcon::ActivationReason reason)
 #endif
 }
 
-void TrayIcon::showMessage(QString title, QString msg)
+void TrayIcon::showMessage(const QString& title, const QString& msg)
 {
   trayIcon->showMessage(title, msg);
 }

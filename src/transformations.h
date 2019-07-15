@@ -9,11 +9,11 @@
 class Transformations final
 {
 public:
-  static QString colorIdentityListToString(QList<QChar> distinctManaSymbols);
-  static QJsonArray stringToJsonArray(QString json);
-  static QJsonObject stringToJsonObject(QString json);
-  static QImage applyRoundedCorners2Image(QImage image, int cornerRadius);
-  static QImage toGrayscale(QImage image);
+  static QString colorIdentityListToString(const QList<QChar>& distinctManaSymbols);
+  static QJsonArray stringToJsonArray(const QString& json);
+  static QJsonObject stringToJsonObject(const QString& json);
+  static QImage applyRoundedCorners2Image(const QImage& image, int cornerRadius);
+  static QImage toGrayscale(const QImage& image);
 };
 
 #endif  // EXTENSIONS_H

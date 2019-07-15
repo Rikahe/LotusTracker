@@ -17,10 +17,10 @@ class MtgCards : public QObject
 
 private:
   void updateMtgaSetsFromAPIRequestOnFinish();
-  void downloadSet(QString setCodeVersion);
+  void downloadSet(const QString& setCodeVersion);
   void downloadSetOnFinish();
-  void loadSet(QString setCode);
-  void loadSetFromFile(QString setFileName);
+  void loadSet(const QString& setCode);
+  void loadSetFromFile(const QString& setFileName);
   Card* jsonObject2Card(QJsonObject jsonCard, QString setCode);
   QList<QChar> getBoderColorUsingManaSymbols(QList<QString> manaSymbols, bool isArtifact);
   QList<QChar> getLandBorderColorUsingColorIdentity(QJsonObject jsonCard);

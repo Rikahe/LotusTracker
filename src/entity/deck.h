@@ -41,7 +41,7 @@ public:
   void insertCard(Card* card);
   void setCardQtd(Card* card, int qtd);
 
-  static QString calcColorIdentity(QMap<Card*, int> cards, bool includeLands);
+  static QString calcColorIdentity(const QMap<Card*, int>& cards, bool includeLands);
 };
 
 #endif  // DECK_H

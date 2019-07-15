@@ -39,8 +39,8 @@ class GAnalytics::Private : public QObject
   Q_OBJECT
 
 public:
-  explicit Private(GAnalytics* parent = 0);
-  ~Private();
+  explicit Private(GAnalytics* parent = nullptr);
+  ~Private() override;
 
   GAnalytics* q;
 
@@ -49,7 +49,7 @@ public:
   QQueue<QueryBuffer> messageQueue;
   QTimer timer;
   QNetworkRequest request;
-  GAnalytics::LogLevel logLevel;
+  GAnalytics::LogLevel logLevel{GAnalytics::Error};
 
   QString trackingID;
   QString clientID;
@@ -60,7 +60,7 @@ public:
   QString screenResolution;
   QString viewportSize;
 
-  bool isSending;
+  bool isSending{false};
 
   const static int fourHours = 4 * 60 * 60 * 1000;
   const static QString dateTimeFormat;
@@ -100,10 +100,8 @@ const QString GAnalytics::Private::dateTimeFormat = "yyyy,MM,dd-hh:mm::ss:zzz";
 GAnalytics::Private::Private(GAnalytics* parent)
   : QObject(parent)
   , q(parent)
-  , networkManager(NULL)
+  , networkManager(nullptr)
   , request(QUrl("http://www.google-analytics.com/collect"))
-  , logLevel(GAnalytics::Error)
-  , isSending(false)
 {
   clientID = getClientID();
   userID = getUserID();
@@ -125,8 +123,7 @@ GAnalytics::Private::Private(GAnalytics* parent)
  * Delete an object of class Private.
  */
 GAnalytics::Private::~Private()
-{
-}
+= default;
 
 void GAnalytics::Private::logMessage(LogLevel level, const QString& message)
 {
@@ -433,11 +430,13 @@ void GAnalytics::Private::readMessagesFromFile(const QList<QString>& dataList)
   while (iter.hasNext())
   {
     QString queryString = iter.next();
-    if (!iter.hasNext())
+    if (!iter.hasNext()) {
       break;
+}
     QString dateString = iter.next();
-    if (queryString.isEmpty() || dateString.isEmpty())
+    if (queryString.isEmpty() || dateString.isEmpty()) {
       break;
+}
     QUrlQuery query;
     query.setQuery(queryString);
     QDateTime dateTime = QDateTime::fromString(dateString, dateTimeFormat);
@@ -647,8 +646,9 @@ int GAnalytics::sendInterval() const
 
 void GAnalytics::startSending()
 {
-  if (!isSending())
+  if (!isSending()) {
     emit d->postNextMessage();
+}
 }
 
 bool GAnalytics::isSending() const
@@ -735,10 +735,12 @@ void GAnalytics::sendEvent(const QString& category, const QString& action, const
   query.addQueryItem("av", d->appVersion);
   query.addQueryItem("ec", category);
   query.addQueryItem("ea", action);
-  if (!label.isEmpty())
+  if (!label.isEmpty()) {
     query.addQueryItem("el", label);
-  if (value.isValid())
+}
+  if (value.isValid()) {
     query.addQueryItem("ev", value.toString());
+}
 
   appendCustomValues(query, customValues);
 
@@ -845,7 +847,7 @@ void GAnalytics::Private::postMessage()
   request.setHeader(QNetworkRequest::ContentLengthHeader, ba.length());
 
   // Create a new network access manager if we don't have one yet
-  if (networkManager == NULL)
+  if (networkManager == nullptr)
   {
     networkManager = new QNetworkAccessManager(this);
   }
@@ -865,7 +867,7 @@ void GAnalytics::Private::postMessage()
  */
 void GAnalytics::Private::postMessageFinished()
 {
-  QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
+  auto* reply = qobject_cast<QNetworkReply*>(sender());
   reply->deleteLater();
 
   int httpStausCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();

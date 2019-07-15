@@ -1,9 +1,11 @@
 #include "matchinfo.h"
+
+#include <utility>
 #include "../macros.h"
 
 MatchInfo::MatchInfo(QString eventId, OpponentInfo opponentInfo)
-  : eventId(eventId)
-  , opponentInfo(opponentInfo)
+  : eventId(std::move(eventId))
+  , opponentInfo(std::move(opponentInfo))
   , mode(MatchMode_UNKNOWN)
   , playerMatchWins(false)
   , playerGameWins(0)

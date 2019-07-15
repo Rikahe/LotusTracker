@@ -13,6 +13,7 @@
 #include <QUrlQuery>
 #include <tuple>
 #include <QGraphicsScene>
+#include <utility>
 
 #ifdef Q_OS_MAC
 #include <objc/objc-runtime.h>
@@ -175,7 +176,7 @@ void DeckOverlayBase::changeAlpha(int alpha)
 
 void DeckOverlayBase::changeCardLayout(QString cardLayout)
 {
-  cardBGSkin = cardLayout;
+  cardBGSkin = std::move(cardLayout);
   update();
 }
 
@@ -199,8 +200,8 @@ void DeckOverlayBase::changeUnhiddenTimeout(int timeout)
 
 void DeckOverlayBase::blinkCard(Card* card)
 {
-  QTimer* blinkTimer = new QTimer();
-  CardBlinkInfo* cardBlinkInfo = new CardBlinkInfo(this, card, blinkTimer);
+  auto* blinkTimer = new QTimer();
+  auto* cardBlinkInfo = new CardBlinkInfo(this, card, blinkTimer);
   cardsBlinkInfo[card] = cardBlinkInfo;
   connect(blinkTimer, &QTimer::timeout, cardBlinkInfo, &CardBlinkInfo::timeout);
   blinkTimer->start(100);
@@ -239,7 +240,7 @@ void DeckOverlayBase::drawCover(QPainter& painter)
 {
   // Cover BG
   float ratio = isShowCardManaCostEnabled ? 4 : 3.5f;
-  int height = static_cast<int>(uiWidth / ratio);
+  auto height = static_cast<int>(uiWidth / ratio);
   QRect coverRect(uiPos.x(), uiPos.y(), uiWidth, height);
   painter.setPen(bgPen);
   painter.drawRoundedRect(coverRect, cornerRadius, cornerRadius);
@@ -277,7 +278,7 @@ void DeckOverlayBase::drawCoverButtons(QPainter& painter)
   painter.drawImage(zoomMinusX, zoomButtonY, zoomMinusScaled);
   zoomMinusButton = QRect(zoomMinusX, zoomButtonY, zoomButtonSize, zoomButtonSize);
   // Plus button
-  int zoomPlusX = static_cast<int>(zoomMinusX + zoomButtonSize + zoomButtonMargin);
+  auto zoomPlusX = static_cast<int>(zoomMinusX + zoomButtonSize + zoomButtonMargin);
   QImage zoomPlus(":/zoom_plus.png");
   QImage zoomPlusScaled =
       zoomPlus.scaled(zoomButtonSize, zoomButtonSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
@@ -300,9 +301,9 @@ void DeckOverlayBase::drawDeckInfo(QPainter& painter)
   QString deckColorIdentity = getDeckColorIdentity();
   if (deckColorIdentity != "m")
   {
-    for (int i = 0; i < deckColorIdentity.length(); i++)
+    for (auto i : deckColorIdentity)
     {
-      QChar manaSymbol = deckColorIdentity.at(i);
+      QChar manaSymbol = i;
       drawMana(painter, manaSymbol, manaSize, false, manaX, manaY);
       manaX += manaSize + 3;
     }
@@ -355,7 +356,7 @@ void DeckOverlayBase::drawDeckCards(QPainter& painter)
       int manaCostWidth = card->manaSymbols.length() * (manaSize + manaMargin);
       int manaX = uiPos.x() + uiWidth - manaRightMargin - manaCostWidth;
       int manaY = cardBGY + cardBGImgSize.height() / 2 - manaSize / 2;
-      for (QString manaSymbol : card->manaSymbols)
+      for (const QString& manaSymbol : card->manaSymbols)
       {
         ;
         drawMana(painter, manaSymbol, manaSize, cardQtdRemains == 0, manaX, manaY);
@@ -450,7 +451,7 @@ void DeckOverlayBase::drawHoverCard(QPainter& painter)
 
 void DeckOverlayBase::onCardImageDownloaded()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QString mtgaId = reply->request().rawHeader("mtgaid");
   QImage cardImg;
   cardImg.loadFromData(reply->readAll());
@@ -458,7 +459,7 @@ void DeckOverlayBase::onCardImageDownloaded()
   update();
 }
 
-void DeckOverlayBase::drawText(QPainter& painter, QFont textFont, QPen textPen, QString text, int textOptions,
+void DeckOverlayBase::drawText(QPainter& painter, const QFont& textFont, const QPen& textPen, const QString& text, int textOptions,
                                bool shadow, int textX, int textY, int textHeight, int textWidth)
 {
   painter.setFont(textFont);
@@ -471,7 +472,7 @@ void DeckOverlayBase::drawText(QPainter& painter, QFont textFont, QPen textPen, 
   painter.drawText(textX, textY, textWidth, textHeight, textOptions, text);
 }
 
-void DeckOverlayBase::drawMana(QPainter& painter, QString manaSymbol, int manaSize, bool grayscale, int manaX,
+void DeckOverlayBase::drawMana(QPainter& painter, const QString& manaSymbol, int manaSize, bool grayscale, int manaX,
                                int manaY)
 {
   QImage manaImg;

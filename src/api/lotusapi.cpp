@@ -15,6 +15,7 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QUrl>
+#include <utility>
 
 #define HEADER_AUTHORIZATION "Authorization"
 #define UPDATE_COLLECTION_INTERVAL 30  // minutes between each player collection update
@@ -29,10 +30,9 @@ LotusTrackerAPI::LotusTrackerAPI(QObject* parent)
 }
 
 LotusTrackerAPI::~LotusTrackerAPI()
-{
-}
+= default;
 
-void LotusTrackerAPI::signInUser(QString email, QString password)
+void LotusTrackerAPI::signInUser(const QString& email, const QString& password)
 {
   QJsonObject jsonObj;
   jsonObj.insert("email", QJsonValue(email));
@@ -50,7 +50,7 @@ void LotusTrackerAPI::signInUser(QString email, QString password)
   connect(reply, &QNetworkReply::finished, this, &LotusTrackerAPI::authRequestOnFinish);
 }
 
-void LotusTrackerAPI::registerUser(QString email, QString password)
+void LotusTrackerAPI::registerUser(const QString& email, const QString& password)
 {
   QJsonObject jsonObj;
   jsonObj.insert("email", QJsonValue(email));
@@ -70,7 +70,7 @@ void LotusTrackerAPI::registerUser(QString email, QString password)
 
 void LotusTrackerAPI::authRequestOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -128,7 +128,7 @@ UserSettings LotusTrackerAPI::createUserSettingsFromSign(QJsonObject jsonRsp)
   return UserSettings(userId, userEmail, userToken, refreshToken, getExpiresEpoch(expiresIn));
 }
 
-void LotusTrackerAPI::refreshToken(QString refreshToken)
+void LotusTrackerAPI::refreshToken(const QString& refreshToken)
 {
   if (isRefreshTokenInProgress)
   {
@@ -153,7 +153,7 @@ void LotusTrackerAPI::refreshToken(QString refreshToken)
 void LotusTrackerAPI::tokenRefreshRequestOnFinish()
 {
   isRefreshTokenInProgress = false;
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -186,7 +186,7 @@ UserSettings LotusTrackerAPI::createUserSettingsFromRefreshedToken(QJsonObject j
   return UserSettings(userId, userEmail, userToken, refreshToken, getExpiresEpoch(expiresIn));
 }
 
-qlonglong LotusTrackerAPI::getExpiresEpoch(QString expiresIn)
+qlonglong LotusTrackerAPI::getExpiresEpoch(const QString& expiresIn)
 {
   using namespace std::chrono;
   seconds expiresSeconds = seconds(expiresIn.toInt());
@@ -197,7 +197,7 @@ qlonglong LotusTrackerAPI::getExpiresEpoch(QString expiresIn)
 
 void LotusTrackerAPI::onTokenRefreshed()
 {
-  for (QString requestUrl : requestsToRecall.keys())
+  for (const QString& requestUrl : requestsToRecall.keys())
   {
     QPair<QString, RequestData> methodRequest = requestsToRecall[requestUrl];
     LOGD(QString("Recalling request"));
@@ -217,7 +217,7 @@ void LotusTrackerAPI::onTokenRefreshed()
   }
 }
 
-void LotusTrackerAPI::recoverPassword(QString email)
+void LotusTrackerAPI::recoverPassword(const QString& email)
 {
   QJsonObject jsonObj;
   jsonObj.insert("email", QJsonValue(email));
@@ -236,7 +236,7 @@ void LotusTrackerAPI::recoverPassword(QString email)
 
 void LotusTrackerAPI::recoverPasswordRequestOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -279,12 +279,12 @@ void LotusTrackerAPI::updatePlayerCollection(QMap<int, int> ownedCards)
     return;
   }
   lastUpdatePlayerCollectionDate = now;
-  sendPost(RqtUpdatePlayerCollection(ownedCards));
+  sendPost(RqtUpdatePlayerCollection(std::move(ownedCards)));
 }
 
 void LotusTrackerAPI::setPlayerUserName(QString userName)
 {
-  this->userName = userName;
+  this->userName = std::move(userName);
 }
 
 void LotusTrackerAPI::updatePlayerInventory(PlayerInventory playerInventory)
@@ -311,7 +311,7 @@ void LotusTrackerAPI::createPlayerDeck(Deck deck)
   {
     return;
   }
-  sendPost(RqtPlayerDeck(deck));
+  sendPost(RqtPlayerDeck(std::move(deck)));
 }
 
 void LotusTrackerAPI::updatePlayerDeck(Deck deck)
@@ -332,10 +332,10 @@ void LotusTrackerAPI::publishOrUpdatePlayerDeck(QString playerName, Deck deck)
   {
     return;
   }
-  sendPost(RqtPublishPlayerDeck(playerName, userSettings.userId, deck));
+  sendPost(RqtPublishPlayerDeck(std::move(playerName), userSettings.userId, std::move(deck)));
 }
 
-void LotusTrackerAPI::getMatchInfo(QString eventId, QString deckId)
+void LotusTrackerAPI::getMatchInfo(const QString& eventId, const QString& deckId)
 {
   QString path = QString("stats/matchInfo?eventId=%1&deckId=%2").arg(eventId).arg(deckId);
   RequestData rqtGetDeckWinRate(path);
@@ -346,7 +346,7 @@ void LotusTrackerAPI::getMatchInfo(QString eventId, QString deckId)
 
 void LotusTrackerAPI::getMatchInfoRequestOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -382,7 +382,7 @@ void LotusTrackerAPI::getMatchInfoRequestOnFinish()
   emit sgnEventInfo(eventName, eventType);
 }
 
-void LotusTrackerAPI::getPlayerDeckToUpdate(QString deckID)
+void LotusTrackerAPI::getPlayerDeckToUpdate(const QString& deckID)
 {
   UserSettings userSettings = APP_SETTINGS->getUserSettings();
   if (!userSettings.isUserLogged())
@@ -399,7 +399,7 @@ void LotusTrackerAPI::getPlayerDeckToUpdate(QString deckID)
 
 void LotusTrackerAPI::getPlayerDeckToUpdateRequestOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -445,14 +445,14 @@ Deck LotusTrackerAPI::jsonToDeck(QJsonObject deckJson)
   QString name = deckJson["name"].toString();
   QJsonObject cardsFields = deckJson["cards"].toObject();
   QMap<Card*, int> cards;
-  for (QString key : cardsFields.keys())
+  for (const QString& key : cardsFields.keys())
   {
     Card* card = LOTUS_TRACKER->mtgCards->findCard(key.toInt());
     cards[card] = cardsFields[key].toInt();
   }
   QJsonObject sideboardCardsFields = deckJson["sideboard"].toObject();
   QMap<Card*, int> sideboard;
-  for (QString key : sideboardCardsFields.keys())
+  for (const QString& key : sideboardCardsFields.keys())
   {
     Card* card = LOTUS_TRACKER->mtgCards->findCard(key.toInt());
     sideboard[card] = sideboardCardsFields[key].toInt();
@@ -460,10 +460,10 @@ Deck LotusTrackerAPI::jsonToDeck(QJsonObject deckJson)
   return Deck(id, name, cards, sideboard);
 }
 
-void LotusTrackerAPI::uploadMatch(MatchInfo matchInfo, Deck playerDeck, QString playerRankClass)
+void LotusTrackerAPI::uploadMatch(const MatchInfo& matchInfo, const Deck& playerDeck, QString playerRankClass)
 {
   rqtRegisterPlayerMatch = RqtRegisterPlayerMatch(matchInfo, playerDeck);
-  RqtUploadMatch rqtUploadMatch(matchInfo, playerDeck, playerRankClass);
+  RqtUploadMatch rqtUploadMatch(matchInfo, playerDeck, std::move(playerRankClass));
   QNetworkRequest request = prepareRequest(rqtUploadMatch, false);
   QBuffer* buffer = prepareBody(rqtUploadMatch);
   QNetworkReply* reply = networkManager.post(request, buffer);
@@ -479,7 +479,7 @@ void LotusTrackerAPI::uploadEventResult(QString eventId, QString deckId, QString
     return;
   }
   QString appVersion = qApp->applicationVersion();
-  RqtUploadEventResult rqtUploadEventResult(eventId, deckId, deckColors, maxWins, wins, losses);
+  RqtUploadEventResult rqtUploadEventResult(std::move(eventId), std::move(deckId), std::move(deckColors), maxWins, wins, losses);
   sendPost(rqtUploadEventResult);
 }
 
@@ -499,13 +499,13 @@ void LotusTrackerAPI::onRequestPlayerCollection()
 
 void LotusTrackerAPI::onDecodeDeckPosSideboardPayload(QString type, QString payload)
 {
-  RqtParseDeckPosSide request(type, payload);
+  RqtParseDeckPosSide request(std::move(type), std::move(payload));
   sendPost(request, &LotusTrackerAPI::onParseDeckPosSideboardPayloadRequestFinish);
 }
 
 void LotusTrackerAPI::getPlayerCollectionRequestOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -530,7 +530,7 @@ void LotusTrackerAPI::getPlayerCollectionRequestOnFinish()
   }
 
   QMap<int, int> userCollection;
-  for (QString mtgaId : jsonRsp.keys())
+  for (const QString& mtgaId : jsonRsp.keys())
   {
     userCollection[mtgaId.toInt()] = jsonRsp[mtgaId].toInt();
   }
@@ -539,7 +539,7 @@ void LotusTrackerAPI::getPlayerCollectionRequestOnFinish()
 
 void LotusTrackerAPI::onParseDeckPosSideboardPayloadRequestFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -568,7 +568,7 @@ void LotusTrackerAPI::onParseDeckPosSideboardPayloadRequestFinish()
 
 void LotusTrackerAPI::uploadMatchRequestOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)
   {
@@ -606,19 +606,19 @@ void LotusTrackerAPI::registerPlayerMatch(QString matchID)
     return;
   }
 
-  rqtRegisterPlayerMatch.createPath(matchID);
+  rqtRegisterPlayerMatch.createPath(std::move(matchID));
   sendPost(rqtRegisterPlayerMatch);
 }
 
 QNetworkRequest LotusTrackerAPI::prepareGetRequest(RequestData requestData, bool checkUserAuth,
                                                    LotusTrackerAPIMethod onRequestFinish)
 {
-  QNetworkRequest request = prepareRequest(requestData, checkUserAuth, "GET");
+  QNetworkRequest request = prepareRequest(std::move(requestData), checkUserAuth, "GET");
   requestToRecallOnFinish[request.url().toString()] = onRequestFinish;
   return request;
 }
 
-QNetworkRequest LotusTrackerAPI::prepareRequest(RequestData requestData, bool checkUserAuth, QString method)
+QNetworkRequest LotusTrackerAPI::prepareRequest(RequestData requestData, bool checkUserAuth, const QString& method)
 {
   QUrl url(QString("%1/%2").arg(URLs::API()).arg(requestData.path()));
   QNetworkRequest request(url);
@@ -652,7 +652,7 @@ QBuffer* LotusTrackerAPI::prepareBody(RequestData requestData)
   {
     LOGD(QString("Body: %1").arg(QString(bodyJson)));
   }
-  QBuffer* buffer = new QBuffer();
+  auto* buffer = new QBuffer();
   buffer->open((QBuffer::ReadWrite));
   buffer->write(bodyJson);
   buffer->seek(0);
@@ -661,12 +661,12 @@ QBuffer* LotusTrackerAPI::prepareBody(RequestData requestData)
 
 void LotusTrackerAPI::sendGet(RequestData requestData, LotusTrackerAPIMethod onRequestFinish)
 {
-  QNetworkRequest request = prepareGetRequest(requestData, true, onRequestFinish);
+  QNetworkRequest request = prepareGetRequest(std::move(requestData), true, onRequestFinish);
   QNetworkReply* reply = networkManager.get(request);
   connect(reply, &QNetworkReply::finished, this, onRequestFinish);
 }
 
-void LotusTrackerAPI::sendPatch(RequestData requestData)
+void LotusTrackerAPI::sendPatch(const RequestData& requestData)
 {
   QNetworkRequest request = prepareRequest(requestData, true, "PATCH");
   if (!request.hasRawHeader(QString(HEADER_AUTHORIZATION).toUtf8()))
@@ -678,7 +678,7 @@ void LotusTrackerAPI::sendPatch(RequestData requestData)
   connect(reply, &QNetworkReply::finished, this, &LotusTrackerAPI::requestOnFinish);
 }
 
-void LotusTrackerAPI::sendPost(RequestData requestData, LotusTrackerAPIMethod onRequestFinish)
+void LotusTrackerAPI::sendPost(const RequestData& requestData, LotusTrackerAPIMethod onRequestFinish)
 {
   QNetworkRequest request = prepareRequest(requestData, true, "POST");
   if (!request.hasRawHeader(QString(HEADER_AUTHORIZATION).toUtf8()))
@@ -699,7 +699,7 @@ void LotusTrackerAPI::sendPost(RequestData requestData, LotusTrackerAPIMethod on
 
 void LotusTrackerAPI::requestOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QString requestUrl = reply->request().url().toString();
   QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
   if (LOG_REQUEST_ENABLED)

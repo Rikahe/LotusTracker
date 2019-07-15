@@ -3,7 +3,7 @@
 
 #include <QJsonParseError>
 
-QString Transformations::colorIdentityListToString(QList<QChar> distinctManaSymbols)
+QString Transformations::colorIdentityListToString(const QList<QChar>& distinctManaSymbols)
 {
   if (distinctManaSymbols.contains(QChar('a')))
   {
@@ -121,7 +121,7 @@ QString Transformations::colorIdentityListToString(QList<QChar> distinctManaSymb
   return (identity.isEmpty()) ? "" : identity;
 }
 
-QJsonArray Transformations::stringToJsonArray(QString json)
+QJsonArray Transformations::stringToJsonArray(const QString& json)
 {
   QJsonParseError parseError;
   QJsonArray jsonArray = QJsonDocument::fromJson(json.toUtf8(), &parseError).array();
@@ -136,7 +136,7 @@ QJsonArray Transformations::stringToJsonArray(QString json)
   }
 }
 
-QJsonObject Transformations::stringToJsonObject(QString json)
+QJsonObject Transformations::stringToJsonObject(const QString& json)
 {
   if (json.isEmpty())
   {
@@ -156,7 +156,7 @@ QJsonObject Transformations::stringToJsonObject(QString json)
   }
 }
 
-QImage Transformations::applyRoundedCorners2Image(QImage image, int cornerRadius)
+QImage Transformations::applyRoundedCorners2Image(const QImage& image, int cornerRadius)
 {
   QImage roundedImage(image.width(), image.height(), QImage::Format_ARGB32);
   roundedImage.fill(Qt::transparent);
@@ -171,10 +171,10 @@ QImage Transformations::applyRoundedCorners2Image(QImage image, int cornerRadius
   return roundedImage;
 }
 
-QImage Transformations::toGrayscale(QImage image)
+QImage Transformations::toGrayscale(const QImage& image)
 {
   QImage grayscaleImage = image.convertToFormat(image.hasAlphaChannel() ? QImage::Format_ARGB32 : QImage::Format_RGB32);
-  unsigned int* data = (unsigned int*)grayscaleImage.bits();
+  auto* data = reinterpret_cast<unsigned int*>(grayscaleImage.bits());
   int pixelCount = grayscaleImage.width() * grayscaleImage.height();
   // Convert each pixel to grayscale
   for (int i = 0; i < pixelCount; ++i)

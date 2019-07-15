@@ -9,6 +9,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QUuid>
+#include <utility>
 
 #define KEY_INSTALLATION_UUID "installationUuid"
 #define KEY_AUTOSTART "autoStart"
@@ -157,7 +158,7 @@ QString AppSettings::getCardLayout()
   return settings.value(KEY_OVERLAY_LAYOUT, "mtga").toString();
 }
 
-void AppSettings::setCardLayout(QString cardLayout)
+void AppSettings::setCardLayout(const QString& cardLayout)
 {
   settings.setValue(KEY_OVERLAY_LAYOUT, cardLayout);
 }
@@ -176,7 +177,7 @@ QString AppSettings::getLogPath()
   return settings.value(KEY_LOG_PATH, defaultLogPath).toString();
 }
 
-void AppSettings::setLogPath(QString logPath)
+void AppSettings::setLogPath(const QString& logPath)
 {
   settings.setValue(KEY_LOG_PATH, logPath);
 }
@@ -258,7 +259,7 @@ QPoint AppSettings::getDeckOverlayPlayerPos(int uiWidth)
   UNUSED(uiWidth);
   int x = settings.value(KEY_OVERLAY_PLAYER_X, DEFAULT_OVERLAY_VIEW_X).toInt();
   int y = settings.value(KEY_OVERLAY_PLAYER_Y, DEFAULT_OVERLAY_VIEW_Y).toInt();
-  return QPoint(x, y);
+  return {x, y};
 }
 
 void AppSettings::setDeckOverlayPlayerPos(QPoint pos)
@@ -295,7 +296,7 @@ QPoint AppSettings::getDeckOverlayOpponentPos(int uiWidth, int cardHoverWidth)
   int defaultX = screen.width() - uiWidth - cardHoverWidth - DEFAULT_OVERLAY_VIEW_X - 25;
   int x = settings.value(KEY_OVERLAY_OPPONENT_X, defaultX).toInt();
   int y = settings.value(KEY_OVERLAY_OPPONENT_Y, DEFAULT_OVERLAY_VIEW_Y).toInt();
-  return QPoint(x, y);
+  return {x, y};
 }
 
 void AppSettings::setDeckOverlayOpponentPos(QPoint pos)
@@ -331,7 +332,7 @@ QPoint AppSettings::getDeckOverlayDraftPos(int uiWidth)
   UNUSED(uiWidth);
   int x = settings.value(KEY_OVERLAY_DRAFT_X, DEFAULT_OVERLAY_VIEW_X).toInt();
   int y = settings.value(KEY_OVERLAY_DRAFT_Y, DEFAULT_OVERLAY_VIEW_Y).toInt();
-  return QPoint(x, y);
+  return {x, y};
 }
 
 void AppSettings::setDeckOverlayDraftPos(QPoint pos)
@@ -360,13 +361,13 @@ void AppSettings::enableShowDeckAfterDraft(bool enabled)
   settings.setValue(KEY_OVERLAY_SHOW_DECK_AFTER_DRAFT_ENABLED, enabled);
 }
 
-bool AppSettings::hasDraftPick(QString eventId)
+bool AppSettings::hasDraftPick(const QString& eventId)
 {
   QString eventPickKey = QString("%1/%2/0_0_picks").arg(KEY_OVERLAY_DRAFT_PICKS_PREFIX).arg(eventId);
   return settings.contains(eventPickKey);
 }
 
-void AppSettings::clearDraftPick(QString eventId)
+void AppSettings::clearDraftPick(const QString& eventId)
 {
   QString eventPickKey = QString("%1/%2/").arg(KEY_OVERLAY_DRAFT_PICKS_PREFIX).arg(eventId);
   settings.remove(eventPickKey);
@@ -374,20 +375,20 @@ void AppSettings::clearDraftPick(QString eventId)
 
 QString AppSettings::getDraftPicks(QString eventId, int packNumber, int pickNumber)
 {
-  QString eventPickKey = getDraftPickBaseKey(eventId, packNumber, pickNumber);
+  QString eventPickKey = getDraftPickBaseKey(std::move(eventId), packNumber, pickNumber);
   return settings.value(QString("%1_picks").arg(eventPickKey), "").toString();
 }
 
 QString AppSettings::getDraftPicked(QString eventId, int packNumber, int pickNumber)
 {
-  QString eventPickKey = getDraftPickBaseKey(eventId, packNumber, pickNumber);
+  QString eventPickKey = getDraftPickBaseKey(std::move(eventId), packNumber, pickNumber);
   return settings.value(QString("%1_picked").arg(eventPickKey), "").toString();
 }
 
 void AppSettings::setDraftPick(QString eventId, int packNumber, int pickNumber, int pickedCard,
                                QList<Card*> availablePicks)
 {
-  QString eventPickKey = getDraftPickBaseKey(eventId, packNumber, pickNumber);
+  QString eventPickKey = getDraftPickBaseKey(std::move(eventId), packNumber, pickNumber);
   QString picks;
   for (Card* card : availablePicks)
   {
@@ -398,14 +399,14 @@ void AppSettings::setDraftPick(QString eventId, int packNumber, int pickNumber, 
   settings.setValue(QString("%1_picked").arg(eventPickKey), pickedCard);
 }
 
-QString AppSettings::getDraftPickBaseKey(QString eventId, int packNumber, int pickNumber)
+QString AppSettings::getDraftPickBaseKey(const QString& eventId, int packNumber, int pickNumber)
 {
   return QString("%1/%2/%3_%4").arg(KEY_OVERLAY_DRAFT_PICKS_PREFIX).arg(eventId).arg(packNumber).arg(pickNumber);
 }
 
 // User settings
 
-void AppSettings::setUserSettings(UserSettings userSettings, QString userName)
+void AppSettings::setUserSettings(UserSettings userSettings, const QString& userName)
 {
   QJsonDocument json(QJsonObject({ { "id", userSettings.userId },
                                    { "name", userName },
@@ -478,7 +479,7 @@ void AppSettings::restoreDefaults()
 
 void AppSettings::setUntappedAnonymousUploadToken(QString uploadToken)
 {
-  appSecure->store(KEY_SECURE_ANONYMOUS_TOKEN, uploadToken);
+  appSecure->store(KEY_SECURE_ANONYMOUS_TOKEN, std::move(uploadToken));
 }
 
 QString AppSettings::getUntappedAnonymousUploadToken()

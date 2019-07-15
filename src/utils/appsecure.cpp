@@ -9,7 +9,7 @@ AppSecure::AppSecure(QObject* parent)
   dpj.setAutoDelete(false);
 }
 
-void AppSecure::store(QString key, QString value)
+void AppSecure::store(const QString& key, const QString& value)
 {
   wpj.setKey(key);
   wpj.setTextData(value);
@@ -23,7 +23,7 @@ void AppSecure::store(QString key, QString value)
   }
 }
 
-QString AppSecure::restore(QString key)
+QString AppSecure::restore(const QString& key)
 {
   rpj.setKey(key);
   QEventLoop loop;
@@ -38,7 +38,7 @@ QString AppSecure::restore(QString key)
   return value;
 }
 
-void AppSecure::remove(QString key)
+void AppSecure::remove(const QString& key)
 {
   dpj.setKey(key);
   QEventLoop loop;

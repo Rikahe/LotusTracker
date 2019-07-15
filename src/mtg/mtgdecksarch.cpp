@@ -75,14 +75,14 @@ void MtgDecksArch::loadDecksArchFromFile()
     return;
   }
   deckArchs.clear();
-  for (QString archName : jsonDecksArchitecture.keys())
+  for (const QString& archName : jsonDecksArchitecture.keys())
   {
     QJsonObject jsonArch = jsonDecksArchitecture[archName].toObject();
     int archId = jsonArch["id"].toInt();
     QString archColors = jsonArch["colors"].toString();
     QJsonObject archCards = jsonArch["cards"].toObject();
     QMap<int, double> cards;
-    for (QString archCard : archCards.keys())
+    for (const QString& archCard : archCards.keys())
     {
       cards[archCard.toInt()] = archCards[archCard].toDouble();
     }
@@ -108,7 +108,7 @@ void MtgDecksArch::downloadDecksArch()
 
 void MtgDecksArch::downloadDecksArchOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QByteArray jsonData = reply->readAll();
 
   if (reply->error() == QNetworkReply::ContentNotFoundError)

@@ -13,7 +13,7 @@ MtgaLogWatcher::MtgaLogWatcher(QObject* parent)
   : QObject(parent), logFile(nullptr), timer(new QTimer(this)), lastFilePos(0)
 {
   logPath = LOTUS_TRACKER->appSettings->getLogPath();
-  MtgArena* mtgArena = static_cast<MtgArena*>(parent);
+  auto* mtgArena = static_cast<MtgArena*>(parent);
   if (WATCH_TEST_LOG)
   {
     startWatching();
@@ -33,7 +33,7 @@ MtgaLogWatcher::~MtgaLogWatcher()
   DEL(timer);
 }
 
-void MtgaLogWatcher::setLogPath(QString logPath)
+void MtgaLogWatcher::setLogPath(const QString& logPath)
 {
   this->logPath = logPath;
   logFile = new QFile(logPath + QDir::separator() + "output_log.txt");

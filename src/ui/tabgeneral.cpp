@@ -84,9 +84,9 @@ void TabGeneral::onAutoUpdateChanged()
 void TabGeneral::onChangeLogPathClicked()
 {
   QString file = QFileDialog::getOpenFileName(this, tr("Open magic arena log"), "", tr(LOG_FILE_FILTER));
-  if (file.isEmpty())
+  if (file.isEmpty()) {
     return;
-  else
+  } else
   {
     QString logFileName = QString("%1output_log.txt").arg(QDir::separator());
     if (file.endsWith(logFileName))

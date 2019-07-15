@@ -12,13 +12,12 @@
 #define CLIENT_ID "7bIfoHez8t1tKPVurVpVbT6QfA9muN8PVgcctp02"
 #define HEADER_AUTHORIZATION "Authorization"
 
-UntappedAPI::UntappedAPI(QObject* parent)
+UntappedAPI::UntappedAPI(QObject*  /*parent*/)
 {
 }
 
 UntappedAPI::~UntappedAPI()
-{
-}
+= default;
 
 void UntappedAPI::fetchAnonymousUploadToken()
 {
@@ -39,7 +38,7 @@ void UntappedAPI::fetchAnonymousUploadToken()
 
 void UntappedAPI::anonymousUploadTokenOnFinish()
 {
-  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  auto* reply = static_cast<QNetworkReply*>(sender());
   QString rsp = reply->readAll();
   if (LOG_REQUEST_ENABLED)
   {

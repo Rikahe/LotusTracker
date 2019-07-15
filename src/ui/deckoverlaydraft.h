@@ -49,7 +49,7 @@ signals:
 
 public slots:
   void setPlayerCollection(QMap<int, int> ownedCards);
-  void onDraftStatus(QString eventName, QList<Card*> availablePicks, QList<Card*> pickedCards);
+  void onDraftStatus(QString eventName, const QList<Card*>& availablePicks, const QList<Card*>& pickedCards);
   void onSourceChanged(QString source);
 };
 

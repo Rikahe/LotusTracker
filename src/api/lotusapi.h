@@ -30,29 +30,29 @@ private:
 
   UserSettings createUserSettingsFromSign(QJsonObject jsonRsp);
   UserSettings createUserSettingsFromRefreshedToken(QJsonObject jsonRsp);
-  qlonglong getExpiresEpoch(QString expiresIn);
-  void getPlayerDeckToUpdate(QString deckID);
+  qlonglong getExpiresEpoch(const QString& expiresIn);
+  void getPlayerDeckToUpdate(const QString& deckID);
   void getPlayerDeckToUpdateRequestOnFinish();
   void getMatchInfoRequestOnFinish();
   Deck jsonToDeck(QJsonObject deckJson);
   void registerPlayerMatch(QString matchID);
   void uploadMatchRequestOnFinish();
   QNetworkRequest prepareGetRequest(RequestData requestData, bool checkUserAuth, LotusTrackerAPIMethod onRequestFinish);
-  QNetworkRequest prepareRequest(RequestData requestData, bool checkUserAuth, QString method = "");
+  QNetworkRequest prepareRequest(RequestData requestData, bool checkUserAuth, const QString& method = "");
   QBuffer* prepareBody(RequestData requestData);
   void sendGet(RequestData requestData, LotusTrackerAPIMethod onRequestFinish);
-  void sendPatch(RequestData requestData);
-  void sendPost(RequestData requestData, LotusTrackerAPIMethod onRequestFinish = nullptr);
+  void sendPatch(const RequestData& requestData);
+  void sendPost(const RequestData& requestData, LotusTrackerAPIMethod onRequestFinish = nullptr);
   void requestOnFinish();
 
 public:
   explicit LotusTrackerAPI(QObject* parent = nullptr);
   ~LotusTrackerAPI();
   // Auth
-  void signInUser(QString email, QString password);
-  void registerUser(QString email, QString password);
-  void recoverPassword(QString email);
-  void refreshToken(QString refreshToken);
+  void signInUser(const QString& email, const QString& password);
+  void registerUser(const QString& email, const QString& password);
+  void recoverPassword(const QString& email);
+  void refreshToken(const QString& refreshToken);
   //
   void updatePlayerCollection(QMap<int, int> ownedCards);
   void setPlayerUserName(QString userName);
@@ -60,8 +60,8 @@ public:
   void createPlayerDeck(Deck deck);
   void updatePlayerDeck(Deck deck);
   void publishOrUpdatePlayerDeck(QString playerName, Deck deck);
-  void getMatchInfo(QString eventId, QString deckId);
-  void uploadMatch(MatchInfo matchInfo, Deck playerDeck, QString playerRankClass);
+  void getMatchInfo(const QString& eventId, const QString& deckId);
+  void uploadMatch(const MatchInfo& matchInfo, const Deck& playerDeck, QString playerRankClass);
   void uploadEventResult(QString eventId, QString deckId, QString deckColors, int maxWins, int wins, int losses);
 
 signals:

@@ -3,6 +3,7 @@
 
 #include <QApplication>
 #include <QPoint>
+#include <utility>
 
 DeckOverlayOpponent::DeckOverlayOpponent(QWidget* parent) : DeckOverlayBase(parent)
 {
@@ -11,8 +12,7 @@ DeckOverlayOpponent::DeckOverlayOpponent(QWidget* parent) : DeckOverlayBase(pare
 }
 
 DeckOverlayOpponent::~DeckOverlayOpponent()
-{
-}
+= default;
 
 void DeckOverlayOpponent::applyCurrentSettings()
 {
@@ -64,7 +64,7 @@ void DeckOverlayOpponent::afterPaintEvent(QPainter& painter)
 
 void DeckOverlayOpponent::setEventId(QString eventId)
 {
-  this->eventId = eventId;
+  this->eventId = std::move(eventId);
 }
 
 void DeckOverlayOpponent::reset()
@@ -78,7 +78,7 @@ void DeckOverlayOpponent::reset()
 void DeckOverlayOpponent::onReceiveEventInfo(QString name, QString type)
 {
   UNUSED(name);
-  eventType = type;
+  eventType = std::move(type);
 }
 
 void DeckOverlayOpponent::onOpponentPutOnLibraryCard(Card* card)

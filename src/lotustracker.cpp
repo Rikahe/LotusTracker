@@ -18,6 +18,7 @@
 #include <QMessageBox>
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
+#include <utility>
 
 #define LOGS_QUEUE_MAX_SIZE 100
 
@@ -372,22 +373,22 @@ void LotusTracker::showPreferencesScreen()
 
 void LotusTracker::showMessage(QString msg, QString title)
 {
-  trayIcon->showMessage(title, msg);
+  trayIcon->showMessage(std::move(title), std::move(msg));
 }
 
 void LotusTracker::publishOrUpdatePlayerDeck(Deck deck)
 {
   QString playerName = mtgaMatch->getPlayerName();
-  lotusAPI->publishOrUpdatePlayerDeck(playerName, deck);
+  lotusAPI->publishOrUpdatePlayerDeck(playerName, std::move(deck));
 }
 
-void LotusTracker::trackException(LotusException ex)
+void LotusTracker::trackException(const LotusException& ex)
 {
   qDebug() << ex.what();
   gaTracker->sendException(ex.what());
 }
 
-void LotusTracker::onPlayerCollectionUpdated(QMap<int, int> ownedCards)
+void LotusTracker::onPlayerCollectionUpdated(const QMap<int, int>& ownedCards)
 {
   deckOverlayDraft->setPlayerCollection(ownedCards);
   lotusAPI->updatePlayerCollection(ownedCards);
@@ -403,10 +404,10 @@ void LotusTracker::onDeckSubmited(QString eventId, Deck deck)
 {
   deckOverlayPlayer->loadDeck(deck);
   lotusAPI->updatePlayerDeck(deck);
-  lotusAPI->getMatchInfo(eventId, deck.id);
+  lotusAPI->getMatchInfo(std::move(eventId), deck.id);
 }
 
-void LotusTracker::onEventPlayerCourse(QString eventId, Deck currentDeck, bool isFinished)
+void LotusTracker::onEventPlayerCourse(const QString& eventId, const Deck& currentDeck, bool isFinished)
 {
   eventPlayerCourse = qMakePair(eventId, currentDeck);
   if (isFinished && appSettings->isShowDeckAfterDraftEnabled())
@@ -416,10 +417,10 @@ void LotusTracker::onEventPlayerCourse(QString eventId, Deck currentDeck, bool i
   }
 }
 
-void LotusTracker::onMatchStart(QString eventId, OpponentInfo opponentInfo)
+void LotusTracker::onMatchStart(const QString& eventId, OpponentInfo opponentInfo)
 {
   isOnDraftScreen = false;
-  mtgaMatch->onStartNewMatch(eventId, opponentInfo);
+  mtgaMatch->onStartNewMatch(eventId, std::move(opponentInfo));
   // Load deck from event in course if not loaded yet (event continues without submitDeck)
   if (eventId == eventPlayerCourse.first)
   {
@@ -438,7 +439,7 @@ void LotusTracker::onGameStart(MatchMode mode, QList<MatchZone> zones, int seatI
   {
     return;
   }
-  mtgaMatch->onGameStart(mode, zones, seatId);
+  mtgaMatch->onGameStart(mode, std::move(zones), seatId);
   LOGD(QString("mtgArena->isFocused: %1").arg(mtgArena->isFocused));
   if (APP_SETTINGS->isDeckOverlayPlayerEnabled() && mtgArena->isFocused)
   {
@@ -510,7 +511,7 @@ void LotusTracker::onGameCompleted(QMap<int, int> teamIdWins)
   {
     return;
   }
-  mtgaMatch->onGameCompleted(deckOverlayOpponent->getDeck(), teamIdWins);
+  mtgaMatch->onGameCompleted(deckOverlayOpponent->getDeck(), std::move(teamIdWins));
   hideTrackerTimer->start(5000);
 }
 
@@ -530,7 +531,7 @@ void LotusTracker::onMatchEnds(int winningTeamId)
 
 void LotusTracker::onEventFinish(QString eventId, QString deckId, QString deckColors, int maxWins, int wins, int losses)
 {
-  lotusAPI->uploadEventResult(eventId, deckId, deckColors, maxWins, wins, losses);
+  lotusAPI->uploadEventResult(std::move(eventId), std::move(deckId), std::move(deckColors), maxWins, wins, losses);
   if (APP_SETTINGS->isShowDeckAfterDraftEnabled())
   {
     deckOverlayPlayer->reset();
@@ -632,13 +633,13 @@ void LotusTracker::onDraftPick(int mtgaId, int packNumber, int pickNumber)
   APP_SETTINGS->setDraftPick(eventName, packNumber, pickNumber, mtgaId, availablePicks);
 }
 
-void LotusTracker::onDraftStatus(QString eventName, QString status, int packNumber, int pickNumber,
+void LotusTracker::onDraftStatus(QString eventName, const QString& status, int packNumber, int pickNumber,
                                  QList<Card*> availablePicks, QList<Card*> pickedCards)
 {
   UNUSED(packNumber);
   UNUSED(pickNumber);
   isOnDraftScreen = true;
-  deckOverlayDraft->onDraftStatus(eventName, availablePicks, pickedCards);
+  deckOverlayDraft->onDraftStatus(std::move(eventName), std::move(availablePicks), std::move(pickedCards));
   if (status == "Draft.PickNext")
   {
     deckOverlayDraft->show();
@@ -653,5 +654,5 @@ void LotusTracker::onDraftStatus(QString eventName, QString status, int packNumb
 // Just for Tests
 void LotusTracker::setEventInfo(QString eventName, QString eventType)
 {
-  deckOverlayOpponent->onReceiveEventInfo(eventName, eventType);
+  deckOverlayOpponent->onReceiveEventInfo(std::move(eventName), std::move(eventType));
 }

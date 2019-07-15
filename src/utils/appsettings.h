@@ -33,9 +33,9 @@ public:
   int getDeckTrackerAlpha();
   void setDeckTrackerAlpha(int alpha);
   QString getCardLayout();
-  void setCardLayout(QString cardLayout);
+  void setCardLayout(const QString& cardLayout);
   QString getLogPath();
-  void setLogPath(QString logPath);
+  void setLogPath(const QString& logPath);
   int getUnhiddenDelay();
   void setUnhiddenDelay(int unhiddenTimeout);
   bool isShowCardManaCostEnabled();
@@ -71,14 +71,14 @@ public:
   void setDeckOverlayDraftScale(int scale);
   bool isShowDeckAfterDraftEnabled();
   void enableShowDeckAfterDraft(bool enabled);
-  bool hasDraftPick(QString eventId);
-  void clearDraftPick(QString eventId);
+  bool hasDraftPick(const QString& eventId);
+  void clearDraftPick(const QString& eventId);
   QString getDraftPicks(QString eventId, int packNumber, int pickNumber);
   QString getDraftPicked(QString eventId, int packNumber, int pickNumber);
   void setDraftPick(QString eventId, int packNumber, int pickNumber, int pickedCard, QList<Card*> availablePicks);
-  QString getDraftPickBaseKey(QString eventId, int packNumber, int pickNumber);
+  QString getDraftPickBaseKey(const QString& eventId, int packNumber, int pickNumber);
   // User settings
-  void setUserSettings(UserSettings userSettings, QString userName = "");
+  void setUserSettings(UserSettings userSettings, const QString& userName = "");
   UserSettings getUserSettings();
   void clearUserSettings();
   void restoreDefaults();

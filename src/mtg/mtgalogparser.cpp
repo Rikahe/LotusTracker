@@ -5,6 +5,7 @@
 
 #include <QList>
 #include <QRegularExpression>
+#include <utility>
 
 #define REGEXP_RAW_MSG "\\s(==>|to\\sMatch|<==|Incoming|Match\\sto).+(\\s|\\n)(\\{|\\[)(\\n\\s+.*)+\\n+(\\}|\\])\\n"
 #define REGEXP_MSG_RESPONSE_NUMBER "((?<=\\s)\\d+(?=\\:\\s)|(?<=\\()\\d+(?=\\)))"
@@ -20,8 +21,7 @@ MtgaLogParser::MtgaLogParser(QObject* parent, MtgCards* mtgCards) : QObject(pare
 }
 
 MtgaLogParser::~MtgaLogParser()
-{
-}
+= default;
 
 Deck MtgaLogParser::jsonObject2Deck(QJsonObject jsonDeck)
 {
@@ -71,7 +71,7 @@ Deck MtgaLogParser::jsonObject2Deck(QJsonObject jsonDeck)
   return Deck(id, name, cards, sideboard);
 }
 
-void MtgaLogParser::parse(QString logNewContent)
+void MtgaLogParser::parse(const QString& logNewContent)
 {
   // Extract raw msgs
   QRegularExpressionMatchIterator iterator = reRawMsg.globalMatch(logNewContent + "\n");
@@ -84,7 +84,7 @@ void MtgaLogParser::parse(QString logNewContent)
   // List of msgs in format (msgId, msgJson)
   QList<QPair<QString, QString>> incomingMsgs;
   QList<QPair<QString, QString>> outcomingMsgs;
-  for (QString msg : rawMsgs)
+  for (const QString& msg : rawMsgs)
   {
     QRegularExpressionMatch numberMatch = reMsgNumber.match(msg);
     if (numberMatch.hasMatch())
@@ -139,11 +139,11 @@ void MtgaLogParser::parse(QString logNewContent)
     }
   }
   // Log msgs
-  for (QPair<QString, QString> msg : outcomingMsgs)
+  for (const QPair<QString, QString>& msg : outcomingMsgs)
   {
     parseOutcomingMsg(msg);
   }
-  for (QPair<QString, QString> msg : incomingMsgs)
+  for (const QPair<QString, QString>& msg : incomingMsgs)
   {
     parseIncomingMsg(msg);
   }
@@ -245,7 +245,7 @@ void MtgaLogParser::parseIncomingMsg(QPair<QString, QString> msg)
 
 void MtgaLogParser::parsePlayerInventory(QString json)
 {
-  QJsonObject jsonPlayerIventory = Transformations::stringToJsonObject(json);
+  QJsonObject jsonPlayerIventory = Transformations::stringToJsonObject(std::move(json));
   if (jsonPlayerIventory.empty())
   {
     return;
@@ -268,7 +268,7 @@ void MtgaLogParser::parsePlayerInventory(QString json)
 
 void MtgaLogParser::parsePlayerInventoryUpdate(QString json)
 {
-  QJsonObject jsonPlayerIventoryUpdate = Transformations::stringToJsonObject(json);
+  QJsonObject jsonPlayerIventoryUpdate = Transformations::stringToJsonObject(std::move(json));
   if (jsonPlayerIventoryUpdate.empty())
   {
     return;
@@ -288,13 +288,13 @@ void MtgaLogParser::parsePlayerInventoryUpdate(QString json)
 
 void MtgaLogParser::parsePlayerCollection(QString json)
 {
-  QJsonObject jsonPlayerCollection = Transformations::stringToJsonObject(json);
+  QJsonObject jsonPlayerCollection = Transformations::stringToJsonObject(std::move(json));
   if (jsonPlayerCollection.empty())
   {
     return;
   }
   QMap<int, int> ownedCards;
-  for (QString ownedCardId : jsonPlayerCollection.keys())
+  for (const QString& ownedCardId : jsonPlayerCollection.keys())
   {
     int ownedCardQtd = jsonPlayerCollection[ownedCardId].toInt();
     ownedCards[ownedCardId.toInt()] = ownedCardQtd;
@@ -305,7 +305,7 @@ void MtgaLogParser::parsePlayerCollection(QString json)
 
 void MtgaLogParser::parsePlayerDecks(QString json)
 {
-  QJsonArray jsonPlayerDecks = Transformations::stringToJsonArray(json);
+  QJsonArray jsonPlayerDecks = Transformations::stringToJsonArray(std::move(json));
   if (jsonPlayerDecks.empty())
   {
     return;
@@ -322,7 +322,7 @@ void MtgaLogParser::parsePlayerDecks(QString json)
 
 void MtgaLogParser::parseEventPlayerCourse(QString json)
 {
-  QJsonObject jsonEventPlayerCourse = Transformations::stringToJsonObject(json);
+  QJsonObject jsonEventPlayerCourse = Transformations::stringToJsonObject(std::move(json));
   if (jsonEventPlayerCourse.empty())
   {
     return;
@@ -341,7 +341,7 @@ void MtgaLogParser::parseEventPlayerCourse(QString json)
 
 void MtgaLogParser::parseEventPlayerCourses(QString json)
 {
-  QJsonArray jsonEventCourses = Transformations::stringToJsonArray(json);
+  QJsonArray jsonEventCourses = Transformations::stringToJsonArray(std::move(json));
   if (jsonEventCourses.empty())
   {
     return;
@@ -358,7 +358,7 @@ void MtgaLogParser::parseEventPlayerCourses(QString json)
 
 void MtgaLogParser::parseMatchCreated(QString json)
 {
-  QJsonObject jsonMatchCreated = Transformations::stringToJsonObject(json);
+  QJsonObject jsonMatchCreated = Transformations::stringToJsonObject(std::move(json));
   if (jsonMatchCreated.empty())
   {
     return;
@@ -377,7 +377,7 @@ void MtgaLogParser::parseMatchCreated(QString json)
 
 void MtgaLogParser::parseMatchInfo(QString json)
 {
-  QJsonObject jsonMatchInfo = Transformations::stringToJsonObject(json);
+  QJsonObject jsonMatchInfo = Transformations::stringToJsonObject(std::move(json));
   if (jsonMatchInfo.empty())
   {
     return;
@@ -423,7 +423,7 @@ void MtgaLogParser::parseMatchInfo(QString json)
 
 void MtgaLogParser::parsePlayerRankInfo(QString json)
 {
-  QJsonObject jsonPlayerRankInfo = Transformations::stringToJsonObject(json);
+  QJsonObject jsonPlayerRankInfo = Transformations::stringToJsonObject(std::move(json));
   if (jsonPlayerRankInfo.empty())
   {
     return;
@@ -436,7 +436,7 @@ void MtgaLogParser::parsePlayerRankInfo(QString json)
 
 void MtgaLogParser::parsePlayerRankUpdated(QString json)
 {
-  QJsonObject jsonPlayerRankUpdate = Transformations::stringToJsonObject(json);
+  QJsonObject jsonPlayerRankUpdate = Transformations::stringToJsonObject(std::move(json));
   if (jsonPlayerRankUpdate.empty())
   {
     return;
@@ -453,7 +453,7 @@ void MtgaLogParser::parsePlayerRankUpdated(QString json)
 
 void MtgaLogParser::parsePlayerDeckCreate(QString json)
 {
-  QJsonObject jsonPlayerCreateDeck = Transformations::stringToJsonObject(json);
+  QJsonObject jsonPlayerCreateDeck = Transformations::stringToJsonObject(std::move(json));
   if (jsonPlayerCreateDeck.empty())
   {
     return;
@@ -465,7 +465,7 @@ void MtgaLogParser::parsePlayerDeckCreate(QString json)
 
 void MtgaLogParser::parsePlayerDeckUpdate(QString json)
 {
-  QJsonObject jsonPlayerUpdateDeck = Transformations::stringToJsonObject(json);
+  QJsonObject jsonPlayerUpdateDeck = Transformations::stringToJsonObject(std::move(json));
   if (jsonPlayerUpdateDeck.empty())
   {
     return;
@@ -477,7 +477,7 @@ void MtgaLogParser::parsePlayerDeckUpdate(QString json)
 
 void MtgaLogParser::parsePlayerDeckSubmited(QString json)
 {
-  QJsonObject jsonPlayerDeckSubmited = Transformations::stringToJsonObject(json);
+  QJsonObject jsonPlayerDeckSubmited = Transformations::stringToJsonObject(std::move(json));
   if (jsonPlayerDeckSubmited.empty())
   {
     return;
@@ -491,7 +491,7 @@ void MtgaLogParser::parsePlayerDeckSubmited(QString json)
 
 void MtgaLogParser::parseDirectGameChallenge(QString json)
 {
-  QJsonObject jsonMessage = Transformations::stringToJsonObject(json);
+  QJsonObject jsonMessage = Transformations::stringToJsonObject(std::move(json));
   QJsonObject jsonParams = jsonMessage["params"].toObject();
   QString jsonDeckString = jsonParams["deck"]
                                .toString()
@@ -507,7 +507,7 @@ void MtgaLogParser::parseDirectGameChallenge(QString json)
 
 void MtgaLogParser::parseGreToClientMessages(QString json)
 {
-  QJsonObject jsonGreToClientMsg = Transformations::stringToJsonObject(json);
+  QJsonObject jsonGreToClientMsg = Transformations::stringToJsonObject(std::move(json));
   if (jsonGreToClientMsg.empty())
   {
     return;
@@ -673,7 +673,7 @@ QList<MatchZone> MtgaLogParser::getMatchZones(QJsonObject jsonGameStateMessage)
   return zones;
 }
 
-void MtgaLogParser::checkMulligans(int playerSeatId, QList<int> diffDeletedInstanceIds, QList<MatchZone> zones)
+void MtgaLogParser::checkMulligans(int playerSeatId, const QList<int>& diffDeletedInstanceIds, QList<MatchZone> zones)
 {
   for (MatchZone zone : zones)
   {
@@ -707,7 +707,7 @@ void MtgaLogParser::checkMulligans(int playerSeatId, QList<int> diffDeletedInsta
   }
 }
 
-bool MtgaLogParser::listContainsSublist(QList<int> list, QList<int> subList)
+bool MtgaLogParser::listContainsSublist(const QList<int>& list, QList<int> subList)
 {
   for (int item : subList)
   {
@@ -791,7 +791,7 @@ QMap<int, MatchZoneTransfer> MtgaLogParser::getIdsZoneChanged(QJsonArray jsonGSM
 
 void MtgaLogParser::parseClientToGreMessages(QString json)
 {
-  QJsonObject jsonClientToGreMsg = Transformations::stringToJsonObject(json);
+  QJsonObject jsonClientToGreMsg = Transformations::stringToJsonObject(std::move(json));
   if (jsonClientToGreMsg.empty())
   {
     return;
@@ -847,7 +847,7 @@ void MtgaLogParser::onParseDeckPosSideboardJson(QJsonObject jsonMessage)
 
 void MtgaLogParser::parseEventFinish(QString json)
 {
-  QJsonObject jsonClainPrize = Transformations::stringToJsonObject(json);
+  QJsonObject jsonClainPrize = Transformations::stringToJsonObject(std::move(json));
   if (jsonClainPrize.empty())
   {
     return;
@@ -869,7 +869,7 @@ void MtgaLogParser::parseEventFinish(QString json)
 
 void MtgaLogParser::parseDraftPick(QString json)
 {
-  QJsonObject jsonLogInfo = Transformations::stringToJsonObject(json);
+  QJsonObject jsonLogInfo = Transformations::stringToJsonObject(std::move(json));
   if (jsonLogInfo.empty())
   {
     return;
@@ -883,7 +883,7 @@ void MtgaLogParser::parseDraftPick(QString json)
 
 void MtgaLogParser::parseDraftStatus(QString json)
 {
-  QJsonObject jsonDraftStatus = Transformations::stringToJsonObject(json);
+  QJsonObject jsonDraftStatus = Transformations::stringToJsonObject(std::move(json));
   if (jsonDraftStatus.empty())
   {
     return;
@@ -911,7 +911,7 @@ void MtgaLogParser::parseDraftStatus(QString json)
 
 void MtgaLogParser::parseLogInfo(QString json)
 {
-  QJsonObject jsonLogInfo = Transformations::stringToJsonObject(json);
+  QJsonObject jsonLogInfo = Transformations::stringToJsonObject(std::move(json));
   if (jsonLogInfo.empty())
   {
     return;

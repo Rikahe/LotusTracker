@@ -1,4 +1,6 @@
 #include "mtgarena.h"
+
+#include <utility>
 #include "mtgcards.h"
 #include "../macros.h"
 
@@ -43,7 +45,7 @@ MtgaLogParser* MtgArena::getLogParser()
 
 void MtgArena::onLogFilePathChanged(QString logPath)
 {
-  logWatcher->setLogPath(logPath);
+  logWatcher->setLogPath(std::move(logPath));
   logWatcher->stopWatching();
 }
 
@@ -127,5 +129,5 @@ void MtgArena::onMtgaFocusChanged(bool hasFocus)
 
 void MtgArena::onNewLogContent(QString logNewContent)
 {
-  logParser->parse(logNewContent);
+  logParser->parse(std::move(logNewContent));
 }

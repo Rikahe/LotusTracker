@@ -1,12 +1,14 @@
 #include "deck.h"
+
+#include <utility>
 #include "../macros.h"
 #include "../transformations.h"
 
 Deck::Deck(QString id, QString name, QMap<Card*, int> cards, QMap<Card*, int> sideboard)
-  : id(id), name(name), showOnlyRemainingCards(false)
+  : id(std::move(id)), name(std::move(name)), showOnlyRemainingCards(false)
 {
   cardsInitial = cards;
-  cardsSideboard = sideboard;
+  cardsSideboard = std::move(sideboard);
   for (Card* card : cards.keys())
   {
     cardsCurrent[card] = cards[card];
@@ -94,14 +96,14 @@ int Deck::totalCardsOfQtd(int qtd)
 
 void Deck::updateCards(QMap<Card*, int> cards, QMap<Card*, int> sideboard)
 {
-  cardsSideboardingInitial = cards;
-  cardsSideboard = sideboard;
+  cardsSideboardingInitial = std::move(cards);
+  cardsSideboard = std::move(sideboard);
   reset();
 }
 
 void Deck::updateTitle(QString title)
 {
-  this->name = title;
+  this->name = std::move(title);
 }
 
 void Deck::clear()
@@ -171,7 +173,7 @@ void Deck::setCardQtd(Card* card, int qtd)
   cardsCurrent[card] = qtd;
 }
 
-QString Deck::calcColorIdentity(QMap<Card*, int> cards, bool includeLands)
+QString Deck::calcColorIdentity(const QMap<Card*, int>& cards, bool includeLands)
 {
   QList<QChar> distinctManaSymbols;
   for (Card* card : cards.keys())
@@ -180,7 +182,7 @@ QString Deck::calcColorIdentity(QMap<Card*, int> cards, bool includeLands)
     {
       continue;
     }
-    for (QString manaSymbol : card->manaSymbols)
+    for (const QString& manaSymbol : card->manaSymbols)
     {
       QChar symbol = manaSymbol.at(0);
       if (!symbol.isNumber() && symbol != QChar('a') && symbol != QChar('c') && symbol != QChar('m') &&

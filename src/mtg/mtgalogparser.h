@@ -48,8 +48,8 @@ private:
   void parseDraftStatus(QString json);
   void parseDraftPick(QString json);
   void parseLogInfo(QString json);
-  void checkMulligans(int playerSeatId, QList<int> diffDeletedInstanceIds, QList<MatchZone> zones);
-  bool listContainsSublist(QList<int> list, QList<int> subList);
+  void checkMulligans(int playerSeatId, const QList<int>& diffDeletedInstanceIds, QList<MatchZone> zones);
+  bool listContainsSublist(const QList<int>& list, QList<int> subList);
   QList<MatchZone> getMatchZones(QJsonObject jsonGameStateMessage);
   QMap<int, int> getIdsChanged(QJsonArray jsonGSMAnnotations);
   QMap<int, MatchZoneTransfer> getIdsZoneChanged(QJsonArray jsonGSMAnnotations);
@@ -58,7 +58,7 @@ private:
 public:
   explicit MtgaLogParser(QObject* parent = nullptr, MtgCards* mtgCards = nullptr);
   ~MtgaLogParser();
-  void parse(QString logNewContent);
+  void parse(const QString& logNewContent);
 
 signals:
   void sgnPlayerInventory(PlayerInventory playerInventory);

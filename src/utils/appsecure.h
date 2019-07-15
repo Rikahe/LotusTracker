@@ -12,9 +12,9 @@ class AppSecure : public QObject
 public:
   explicit AppSecure(QObject* parent = nullptr);
 
-  void store(QString key, QString value);
-  QString restore(QString key);
-  void remove(QString key);
+  void store(const QString& key, const QString& value);
+  QString restore(const QString& key);
+  void remove(const QString& key);
 
 private:
   WritePasswordJob wpj;

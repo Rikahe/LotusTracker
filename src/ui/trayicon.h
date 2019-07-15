@@ -23,7 +23,7 @@ private:
 public:
   explicit TrayIcon(QObject* parent = nullptr);
   ~TrayIcon();
-  void showMessage(QString title, QString msg);
+  void showMessage(const QString& title, const QString& msg);
   void updateUserSettings();
 
 signals:

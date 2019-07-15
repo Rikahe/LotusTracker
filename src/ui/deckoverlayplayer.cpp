@@ -8,6 +8,7 @@
 #include <QDesktopServices>
 #include <QFontDatabase>
 #include <QToolTip>
+#include <utility>
 
 DeckOverlayPlayer::DeckOverlayPlayer(QWidget* parent)
   : DeckOverlayBase(parent)
@@ -71,8 +72,7 @@ DeckOverlayPlayer::DeckOverlayPlayer(QWidget* parent)
 }
 
 DeckOverlayPlayer::~DeckOverlayPlayer()
-{
-}
+= default;
 
 void DeckOverlayPlayer::onLotusAPIRequestFinishedWithSuccess()
 {
@@ -146,7 +146,7 @@ void DeckOverlayPlayer::afterPaintEvent(QPainter& painter)
   int winRateOptions = Qt::AlignCenter | Qt::AlignVCenter | Qt::TextDontClip;
   QFontMetrics winrateMetrics(statisticsFont);
   int winrateTextHeight = winrateMetrics.ascent() - winrateMetrics.descent();
-  int winRateY = static_cast<int>(uiPos.y() - titleHeight - 5.5 - (uiScale / 2));
+  auto winRateY = static_cast<int>(uiPos.y() - titleHeight - 5.5 - (uiScale / 2));
   drawText(painter, winRateFont, winRatePen, eventNameWithWinRate, winRateOptions, true, uiPos.x(), winRateY,
            winrateTextHeight, uiWidth);
   // Statistics
@@ -209,7 +209,7 @@ void DeckOverlayPlayer::drawStatistics(QPainter& painter)
   }
   // Statistics BG
   float ratio = isShowCardManaCostEnabled ? 4 : 3.5f;
-  int height = static_cast<int>(uiWidth / ratio);
+  auto height = static_cast<int>(uiWidth / ratio);
   QRect statisticsRect(uiPos.x(), uiPos.y() + uiHeight, uiWidth, height);
   painter.setPen(bgPen);
   painter.setBrush(QBrush(QColor(70, 70, 70, 175)));
@@ -278,7 +278,7 @@ void DeckOverlayPlayer::loadDeck(Deck deck)
 
 void DeckOverlayPlayer::loadDeckWithSideboard(QMap<Card*, int> cards, QMap<Card*, int> sideboard)
 {
-  this->deck.updateCards(cards, sideboard);
+  this->deck.updateCards(std::move(cards), std::move(sideboard));
   update();
   LOGI("Deck with sideboard loaded");
 }
@@ -323,7 +323,7 @@ void DeckOverlayPlayer::onPlayerDeckStatus(int wins, int losses, double winRate)
 void DeckOverlayPlayer::onReceiveEventInfo(QString name, QString type)
 {
   UNUSED(type);
-  eventName = name;
+  eventName = std::move(name);
   update();
 }
 
