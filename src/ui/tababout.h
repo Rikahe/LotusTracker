@@ -3,22 +3,25 @@
 
 #include <QWidget>
 
-namespace Ui { class TabAbout; }
+namespace Ui
+{
+class TabAbout;
+}
 
 class TabAbout : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
 
 private:
-    Ui::TabAbout *ui;
+  Ui::TabAbout* ui;
 
 public:
-    explicit TabAbout(QWidget *parent = nullptr);
-    ~TabAbout();
+  explicit TabAbout(QWidget* parent = nullptr);
+  ~TabAbout();
 
 signals:
 
 public slots:
 };
 
-#endif // TABABOUT_H
+#endif  // TABABOUT_H

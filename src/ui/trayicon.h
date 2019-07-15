@@ -9,33 +9,33 @@
 
 class TrayIcon : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 
 private:
-    QSystemTrayIcon *trayIcon;
-    QAction *signAction;
-    QAction *profileAction;
-    QAction *logoutAction;
-    void TrayIconActivated(QSystemTrayIcon::ActivationReason reason);
-    void setupTrayIcon();
-    void configTestMenu(QMenu* testMenu);
+  QSystemTrayIcon* trayIcon;
+  QAction* signAction;
+  QAction* profileAction;
+  QAction* logoutAction;
+  void TrayIconActivated(QSystemTrayIcon::ActivationReason reason);
+  void setupTrayIcon();
+  void configTestMenu(QMenu* testMenu);
 
 public:
-    explicit TrayIcon(QObject *parent = nullptr);
-    ~TrayIcon();
-    void showMessage(QString title, QString msg);
-    void updateUserSettings();
+  explicit TrayIcon(QObject* parent = nullptr);
+  ~TrayIcon();
+  void showMessage(QString title, QString msg);
+  void updateUserSettings();
 
 signals:
-    void sgnShowDeckOverlay();
+  void sgnShowDeckOverlay();
 
 private slots:
-    void signIn();
-    void openProfile();
-    void openPreferences();
-    void signOut();
+  void signIn();
+  void openProfile();
+  void openPreferences();
+  void signOut();
 
 public slots:
 };
 
-#endif // TRAYICON_H
+#endif  // TRAYICON_H

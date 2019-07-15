@@ -15,290 +15,327 @@
 #include <QUrl>
 #include <QUrlQuery>
 
-MtgCards::MtgCards(QObject *parent) : QObject(parent)
+MtgCards::MtgCards(QObject* parent) : QObject(parent)
 {
-    QString dataDir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
-    if(RUNNING_TESTS){
-        dataDir = ":res";
-    }
-    setsDir = dataDir + QDir::separator() + "sets";
-    QDir dir(setsDir);
-    if (!dir.exists() || dir.isEmpty()) {
-        QDir dir;
-        dir.mkpath(setsDir);
-    }
+  QString dataDir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+  if (RUNNING_TESTS)
+  {
+    dataDir = ":res";
+  }
+  setsDir = dataDir + QDir::separator() + "sets";
+  QDir dir(setsDir);
+  if (!dir.exists() || dir.isEmpty())
+  {
+    QDir dir;
+    dir.mkpath(setsDir);
+  }
 #ifdef QT_DEBUG
-    updateMtgaSetsFromAPI();
+  updateMtgaSetsFromAPI();
 #endif
 }
 
 Card* MtgCards::findCard(int mtgaId)
 {
-    if (cards.keys().contains(mtgaId)) {
-        return cards[mtgaId];
-    } else {
-        LOTUS_TRACKER->gaTracker->sendEvent("Card", "Unknown", QString("%1").arg(mtgaId));
-        return new Card(mtgaId, 0, "", "", "", QString("UNKNOWN %1").arg(mtgaId));
-    }
+  if (cards.keys().contains(mtgaId))
+  {
+    return cards[mtgaId];
+  }
+  else
+  {
+    LOTUS_TRACKER->gaTracker->sendEvent("Card", "Unknown", QString("%1").arg(mtgaId));
+    return new Card(mtgaId, 0, "", "", "", QString("UNKNOWN %1").arg(mtgaId));
+  }
 }
 
-void MtgCards::updateMtgaSetsFromAPI(){
-    LOGD(QString("Updating mtga sets"));
-    QUrl url(QString("%1/sets").arg(URLs::API()));
-    QNetworkRequest request(url);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    if (LOG_REQUEST_ENABLED) {
-        LOGD(QString("Get Request: %1").arg(url.toString()));
-    }
-    QNetworkReply *reply = networkManager.get(request);
-    connect(reply, &QNetworkReply::finished,
-            this, &MtgCards::updateMtgaSetsFromAPIRequestOnFinish);
+void MtgCards::updateMtgaSetsFromAPI()
+{
+  LOGD(QString("Updating mtga sets"));
+  QUrl url(QString("%1/sets").arg(URLs::API()));
+  QNetworkRequest request(url);
+  request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+  if (LOG_REQUEST_ENABLED)
+  {
+    LOGD(QString("Get Request: %1").arg(url.toString()));
+  }
+  QNetworkReply* reply = networkManager.get(request);
+  connect(reply, &QNetworkReply::finished, this, &MtgCards::updateMtgaSetsFromAPIRequestOnFinish);
 }
 
 void MtgCards::updateMtgaSetsFromAPIRequestOnFinish()
 {
-    QNetworkReply *reply = static_cast<QNetworkReply*>(sender());
-    QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
-    if (LOG_REQUEST_ENABLED) {
-        LOGD(QString(QJsonDocument(jsonRsp).toJson()));
-    }
+  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  QJsonObject jsonRsp = Transformations::stringToJsonObject(reply->readAll());
+  if (LOG_REQUEST_ENABLED)
+  {
+    LOGD(QString(QJsonDocument(jsonRsp).toJson()));
+  }
 
-    int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-    if (statusCode < 200 || statusCode > 299) {
-        QString reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
-        LOGW(QString("Error: %1 - %2").arg(reply->errorString()).arg(reason));
-        LOTUS_TRACKER->showMessage(tr("Error downloading sets list. ") +
-                                   qApp->applicationName() + tr(" will try again when the game starts."));
-        return;
-    }
+  int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+  if (statusCode < 200 || statusCode > 299)
+  {
+    QString reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+    LOGW(QString("Error: %1 - %2").arg(reply->errorString()).arg(reason));
+    LOTUS_TRACKER->showMessage(tr("Error downloading sets list. ") + qApp->applicationName() +
+                               tr(" will try again when the game starts."));
+    return;
+  }
 
-    LOGD(QString("Mtga Sets downloaded. %1 sets.").arg(jsonRsp.size()));
+  LOGD(QString("Mtga Sets downloaded. %1 sets.").arg(jsonRsp.size()));
 
-    for (QString setCode : jsonRsp.keys()){
-        QString setCodeVersion = QString("%1_%2").arg(setCode).arg(jsonRsp[setCode].toString());
-        loadSet(setCodeVersion);
-    }
+  for (QString setCode : jsonRsp.keys())
+  {
+    QString setCodeVersion = QString("%1_%2").arg(setCode).arg(jsonRsp[setCode].toString());
+    loadSet(setCodeVersion);
+  }
 }
 
 void MtgCards::loadSet(QString setCodeVersion)
 {
-    QFile setFile(setsDir + QDir::separator() + setCodeVersion + ".json");
-    if (QFileInfo(setFile).exists()) {
-        loadSetFromFile(setCodeVersion + ".json");
-    } else {
-        downloadSet(setCodeVersion);
-    }
+  QFile setFile(setsDir + QDir::separator() + setCodeVersion + ".json");
+  if (QFileInfo(setFile).exists())
+  {
+    loadSetFromFile(setCodeVersion + ".json");
+  }
+  else
+  {
+    downloadSet(setCodeVersion);
+  }
 }
 
 void MtgCards::downloadSet(QString setCodeVersion)
 {
-    QString setCode = setCodeVersion.split("_")[0];
-    QString version = setCodeVersion.split("_")[1];
-    QUrlQuery urlQuery;
-    urlQuery.addQueryItem("set", setCode);
-    urlQuery.addQueryItem("version", version);
-    QUrl url(QString("%1/sets").arg(URLs::API()));
-    url.setQuery(urlQuery);
-    QNetworkRequest request(url);
-    QNetworkReply *reply = networkManager.get(request);
-    connect(reply, &QNetworkReply::finished,
-            this, &MtgCards::downloadSetOnFinish);
-    LOGD(QString("Downloading %1 cards").arg(setCode));
+  QString setCode = setCodeVersion.split("_")[0];
+  QString version = setCodeVersion.split("_")[1];
+  QUrlQuery urlQuery;
+  urlQuery.addQueryItem("set", setCode);
+  urlQuery.addQueryItem("version", version);
+  QUrl url(QString("%1/sets").arg(URLs::API()));
+  url.setQuery(urlQuery);
+  QNetworkRequest request(url);
+  QNetworkReply* reply = networkManager.get(request);
+  connect(reply, &QNetworkReply::finished, this, &MtgCards::downloadSetOnFinish);
+  LOGD(QString("Downloading %1 cards").arg(setCode));
 }
 
 void MtgCards::downloadSetOnFinish()
 {
-    QNetworkReply *reply = static_cast<QNetworkReply*>(sender());
-    QByteArray jsonData = reply->readAll();
+  QNetworkReply* reply = static_cast<QNetworkReply*>(sender());
+  QByteArray jsonData = reply->readAll();
 
-    QString setUrl = reply->url().toString();
-    if (reply->error() == QNetworkReply::ContentNotFoundError) {
-        LOGW(QString("Error while downloading mtg card json: %1").arg(setUrl));
-        return;
-    }
+  QString setUrl = reply->url().toString();
+  if (reply->error() == QNetworkReply::ContentNotFoundError)
+  {
+    LOGW(QString("Error while downloading mtg card json: %1").arg(setUrl));
+    return;
+  }
 
-    QJsonArray jsonSet = Transformations::stringToJsonArray(jsonData);
-    if (jsonSet.empty()) {
-        return;
-    }
-    QString query = reply->request().url().query();
-    QString setCode = QUrlQuery(query).queryItemValue("set");
-    QString version = QUrlQuery(query).queryItemValue("version");
-    LOGD(QString("Downloaded %1 bytes from %2 json").arg(jsonData.size()).arg(setCode));
+  QJsonArray jsonSet = Transformations::stringToJsonArray(jsonData);
+  if (jsonSet.empty())
+  {
+    return;
+  }
+  QString query = reply->request().url().query();
+  QString setCode = QUrlQuery(query).queryItemValue("set");
+  QString version = QUrlQuery(query).queryItemValue("version");
+  LOGD(QString("Downloaded %1 bytes from %2 json").arg(jsonData.size()).arg(setCode));
 
-    QString setCodeVersion = QString("%1_%2").arg(setCode).arg(version);
-    QFile setFile(setsDir + QDir::separator() + setCodeVersion + ".json");
-    setFile.open(QIODevice::WriteOnly);
-    setFile.write(jsonData);
-    setFile.close();
-    if (version != "v1") {
-        int currentVersionNumber = version.replace("v", "").toInt();
-        QString oldVersion = QString("v%1").arg(currentVersionNumber - 1);
-        QString oldSetCodeVersion = QString("%1_%2").arg(setCode).arg(oldVersion);
-        QFile oldSetFile(setsDir + QDir::separator() + oldSetCodeVersion + ".json");
-        oldSetFile.remove();
-    }
+  QString setCodeVersion = QString("%1_%2").arg(setCode).arg(version);
+  QFile setFile(setsDir + QDir::separator() + setCodeVersion + ".json");
+  setFile.open(QIODevice::WriteOnly);
+  setFile.write(jsonData);
+  setFile.close();
+  if (version != "v1")
+  {
+    int currentVersionNumber = version.replace("v", "").toInt();
+    QString oldVersion = QString("v%1").arg(currentVersionNumber - 1);
+    QString oldSetCodeVersion = QString("%1_%2").arg(setCode).arg(oldVersion);
+    QFile oldSetFile(setsDir + QDir::separator() + oldSetCodeVersion + ".json");
+    oldSetFile.remove();
+  }
 
-    loadSetFromFile(setCodeVersion + ".json");
+  loadSetFromFile(setCodeVersion + ".json");
 }
 
-void MtgCards::loadSetFromFile(QString setFileName) {
-    QString setCode = setFileName.split("_")[0];
-    LOGD(QString("Loading %1").arg(setCode));
+void MtgCards::loadSetFromFile(QString setFileName)
+{
+  QString setCode = setFileName.split("_")[0];
+  LOGD(QString("Loading %1").arg(setCode));
 
-    QFile setFile(setsDir + QDir::separator() + setFileName);
-    if (!QFileInfo(setFile).exists()) {
-        LOGW(QString("%1 not found.").arg(setFileName));
-        return;
-    }
+  QFile setFile(setsDir + QDir::separator() + setFileName);
+  if (!QFileInfo(setFile).exists())
+  {
+    LOGW(QString("%1 not found.").arg(setFileName));
+    return;
+  }
 
-    bool opened = setFile.open(QIODevice::ReadOnly | QIODevice::Text);
-    if (!opened) {
-        LOGW(QString("Error while opening %1.").arg(setFileName));
-        return;
-    }
+  bool opened = setFile.open(QIODevice::ReadOnly | QIODevice::Text);
+  if (!opened)
+  {
+    LOGW(QString("Error while opening %1.").arg(setFileName));
+    return;
+  }
 
-    QByteArray jsonData = setFile.readAll();
-    QJsonArray jsonCards = Transformations::stringToJsonArray(jsonData);
+  QByteArray jsonData = setFile.readAll();
+  QJsonArray jsonCards = Transformations::stringToJsonArray(jsonData);
 
-    for (QJsonValueRef jsonCardRef: jsonCards) {
-        QJsonObject jsonCard = jsonCardRef.toObject();
-        Card* card = jsonObject2Card(jsonCard, setCode);
-        cards[card->mtgaId] = card;
-        QString layout = jsonCard["layout"].toString();
-        if (layout == "split" && card->number.endsWith("b")) {
-            QString downSideNumber = card->number;
-            QString upSideNumber = downSideNumber.replace("b", "a");
-            int upSideMtgaId = 0;
-            for (int mtgaid : cards.keys()) {
-                if (cards[mtgaid]->setCode == setCode &&
-                        cards[mtgaid]->number == upSideNumber) {
-                    upSideMtgaId = mtgaid;
-                    break;
-                }
-            }
-            Card* cardUp = cards[upSideMtgaId];
-            Card* cardSplit = createSplitCard(cardUp, card);
-            cards[cardSplit->mtgaId] = cardSplit;
+  for (QJsonValueRef jsonCardRef : jsonCards)
+  {
+    QJsonObject jsonCard = jsonCardRef.toObject();
+    Card* card = jsonObject2Card(jsonCard, setCode);
+    cards[card->mtgaId] = card;
+    QString layout = jsonCard["layout"].toString();
+    if (layout == "split" && card->number.endsWith("b"))
+    {
+      QString downSideNumber = card->number;
+      QString upSideNumber = downSideNumber.replace("b", "a");
+      int upSideMtgaId = 0;
+      for (int mtgaid : cards.keys())
+      {
+        if (cards[mtgaid]->setCode == setCode && cards[mtgaid]->number == upSideNumber)
+        {
+          upSideMtgaId = mtgaid;
+          break;
         }
+      }
+      Card* cardUp = cards[upSideMtgaId];
+      Card* cardSplit = createSplitCard(cardUp, card);
+      cards[cardSplit->mtgaId] = cardSplit;
     }
+  }
 
-    LOGI(QString("%1 set loaded with %2 cards").arg(setCode).arg(jsonCards.count()));
+  LOGI(QString("%1 set loaded with %2 cards").arg(setCode).arg(jsonCards.count()));
 }
 
 Card* MtgCards::jsonObject2Card(QJsonObject jsonCard, QString setCode)
 {
-    int mtgaId = jsonCard["mtgaid"].toInt();
-    int multiverseId = jsonCard["multiverseid"].toInt();
-    QString number = jsonCard["number"].toString();
-    QString rarity = jsonCard["rarity"].toString();
-    QString name = jsonCard["name"].toString();
-    QString layout = jsonCard["layout"].toString();
-    QString imageUrl = jsonCard["imageUrl"].toString();
-    QString type = jsonCard["type"].toString();
-    QString lvsRank = jsonCard["lvsRank"].toString();
-    QString lvsDesc = jsonCard["lvsDesc"].toString();
-    QJsonArray jsonTypes = jsonCard["types"].toArray();
-    int cmc = jsonCard["cmc"].toInt();
-    bool isArtifact = false;
-    bool isLand = false;
-    for (QJsonValueRef typeRef : jsonTypes) {
-        if (typeRef.toString().contains("Artifact")) {
-            isArtifact = true;
-        }
-        if (typeRef.toString().contains("Land")) {
-            isLand = true;
-        }
+  int mtgaId = jsonCard["mtgaid"].toInt();
+  int multiverseId = jsonCard["multiverseid"].toInt();
+  QString number = jsonCard["number"].toString();
+  QString rarity = jsonCard["rarity"].toString();
+  QString name = jsonCard["name"].toString();
+  QString layout = jsonCard["layout"].toString();
+  QString imageUrl = jsonCard["imageUrl"].toString();
+  QString type = jsonCard["type"].toString();
+  QString lvsRank = jsonCard["lvsRank"].toString();
+  QString lvsDesc = jsonCard["lvsDesc"].toString();
+  QJsonArray jsonTypes = jsonCard["types"].toArray();
+  int cmc = jsonCard["cmc"].toInt();
+  bool isArtifact = false;
+  bool isLand = false;
+  for (QJsonValueRef typeRef : jsonTypes)
+  {
+    if (typeRef.toString().contains("Artifact"))
+    {
+      isArtifact = true;
     }
-    // Mana color
-    QString rawManaCost = jsonCard["manaCost"].toString();
-    QRegularExpression reManaSymbol("(?<=\\{)[\\w,\\/]+(?=\\})");
-    QRegularExpressionMatchIterator iterator = reManaSymbol.globalMatch(rawManaCost);
-    QList<QString> manaSymbols;
-    while (iterator.hasNext()) {
-        QString manaSymbol = iterator.next().captured(0).toLower();
-        manaSymbols << manaSymbol.replace('/', "");
+    if (typeRef.toString().contains("Land"))
+    {
+      isLand = true;
     }
-    // Color identity
-    QList<QChar> colorIdentity = getBoderColorUsingManaSymbols(manaSymbols, isArtifact);
-    QList<QChar> borderColors = colorIdentity;
-    if (isArtifact) {
-        borderColors.clear();
-        borderColors << 'a';
-    }
-    if (isLand) {
-        borderColors = getLandBorderColorUsingColorIdentity(jsonCard);
-    }
-    return new Card(mtgaId, multiverseId, setCode, number, rarity, name,
-                    type, layout, cmc, rawManaCost, manaSymbols, borderColors,
-                    colorIdentity, imageUrl, lvsRank, lvsDesc, isLand, isArtifact);
+  }
+  // Mana color
+  QString rawManaCost = jsonCard["manaCost"].toString();
+  QRegularExpression reManaSymbol("(?<=\\{)[\\w,\\/]+(?=\\})");
+  QRegularExpressionMatchIterator iterator = reManaSymbol.globalMatch(rawManaCost);
+  QList<QString> manaSymbols;
+  while (iterator.hasNext())
+  {
+    QString manaSymbol = iterator.next().captured(0).toLower();
+    manaSymbols << manaSymbol.replace('/', "");
+  }
+  // Color identity
+  QList<QChar> colorIdentity = getBoderColorUsingManaSymbols(manaSymbols, isArtifact);
+  QList<QChar> borderColors = colorIdentity;
+  if (isArtifact)
+  {
+    borderColors.clear();
+    borderColors << 'a';
+  }
+  if (isLand)
+  {
+    borderColors = getLandBorderColorUsingColorIdentity(jsonCard);
+  }
+  return new Card(mtgaId, multiverseId, setCode, number, rarity, name, type, layout, cmc, rawManaCost, manaSymbols,
+                  borderColors, colorIdentity, imageUrl, lvsRank, lvsDesc, isLand, isArtifact);
 }
 
 QList<QChar> MtgCards::getBoderColorUsingManaSymbols(QList<QString> manaSymbols, bool isArtifact)
 {
-    QString magicColors = "wubrg";
-    QList<QChar> colorIdentity;
-    for (QString manaSymbol : manaSymbols) {
-        for (QChar manaCharSymbol : manaSymbol) {
-            if (magicColors.contains(manaCharSymbol) && !colorIdentity.contains(manaCharSymbol)){
-                colorIdentity << manaCharSymbol;
-            }
-        }
+  QString magicColors = "wubrg";
+  QList<QChar> colorIdentity;
+  for (QString manaSymbol : manaSymbols)
+  {
+    for (QChar manaCharSymbol : manaSymbol)
+    {
+      if (magicColors.contains(manaCharSymbol) && !colorIdentity.contains(manaCharSymbol))
+      {
+        colorIdentity << manaCharSymbol;
+      }
     }
-    if (colorIdentity.size() >= 3) {
-        colorIdentity.clear();
-        colorIdentity << QChar('m');
+  }
+  if (colorIdentity.size() >= 3)
+  {
+    colorIdentity.clear();
+    colorIdentity << QChar('m');
+  }
+  if (colorIdentity.isEmpty())
+  {
+    if (isArtifact)
+    {
+      colorIdentity << 'a';
     }
-    if (colorIdentity.isEmpty()) {
-        if (isArtifact) {
-            colorIdentity << 'a';
-        } else {
-            colorIdentity << 'c';
-        }
+    else
+    {
+      colorIdentity << 'c';
     }
-    return colorIdentity;
+  }
+  return colorIdentity;
 }
 
 QList<QChar> MtgCards::getLandBorderColorUsingColorIdentity(QJsonObject jsonCard)
 {
-    QList<QChar> borderColorIdentity;
-    QJsonArray jsonColorIdentity = jsonCard["colorIdentity"].toArray();
-    for (QJsonValueRef colorIdentityRef : jsonColorIdentity) {
-        borderColorIdentity << colorIdentityRef.toString().toLower().at(0);
-    }
-    if (borderColorIdentity.size() >= 3) {
-        borderColorIdentity.clear();
-        borderColorIdentity << QChar('m');
-    }
-    if (borderColorIdentity.isEmpty()) {
-        borderColorIdentity << 'c';
-    }
-    return borderColorIdentity;
+  QList<QChar> borderColorIdentity;
+  QJsonArray jsonColorIdentity = jsonCard["colorIdentity"].toArray();
+  for (QJsonValueRef colorIdentityRef : jsonColorIdentity)
+  {
+    borderColorIdentity << colorIdentityRef.toString().toLower().at(0);
+  }
+  if (borderColorIdentity.size() >= 3)
+  {
+    borderColorIdentity.clear();
+    borderColorIdentity << QChar('m');
+  }
+  if (borderColorIdentity.isEmpty())
+  {
+    borderColorIdentity << 'c';
+  }
+  return borderColorIdentity;
 }
 
 Card* MtgCards::createSplitCard(Card* upSide, Card* downSide)
 {
-    QString name = QString("%1 // %2").arg(upSide->name).arg(downSide->name);
-    QList<QChar> borderColors = upSide->borderColors;
-    for (QChar c : downSide->borderColors){
-        if (!borderColors.contains(c)) {
-            borderColors.append(c);
-        }
+  QString name = QString("%1 // %2").arg(upSide->name).arg(downSide->name);
+  QList<QChar> borderColors = upSide->borderColors;
+  for (QChar c : downSide->borderColors)
+  {
+    if (!borderColors.contains(c))
+    {
+      borderColors.append(c);
     }
-    QList<QChar> colorIdentity = upSide->colorIdentity;
-    for (QChar c : downSide->colorIdentity){
-        if (!colorIdentity.contains(c)) {
-            colorIdentity.append(c);
-        }
+  }
+  QList<QChar> colorIdentity = upSide->colorIdentity;
+  for (QChar c : downSide->colorIdentity)
+  {
+    if (!colorIdentity.contains(c))
+    {
+      colorIdentity.append(c);
     }
-    QString leftSideNumber = upSide->number;
-    QString number = leftSideNumber.replace("a", "");
-    int mtgaIdSidesDiff = downSide->mtgaId - upSide->mtgaId;
-    int mtgaId = upSide->mtgaId - mtgaIdSidesDiff;
-    return new Card(mtgaId, upSide->multiverseId, upSide->setCode, number,
-                    upSide->rarity, name, upSide->type, upSide->layout,
-                    upSide->cmc, upSide->rawManaCost, upSide->manaSymbols,
-                    borderColors, colorIdentity, upSide->imageUrl,
-                    upSide->lsvRank, upSide->lsvDesc,
-                    upSide->isLand, upSide->isArtifact);
+  }
+  QString leftSideNumber = upSide->number;
+  QString number = leftSideNumber.replace("a", "");
+  int mtgaIdSidesDiff = downSide->mtgaId - upSide->mtgaId;
+  int mtgaId = upSide->mtgaId - mtgaIdSidesDiff;
+  return new Card(mtgaId, upSide->multiverseId, upSide->setCode, number, upSide->rarity, name, upSide->type,
+                  upSide->layout, upSide->cmc, upSide->rawManaCost, upSide->manaSymbols, borderColors, colorIdentity,
+                  upSide->imageUrl, upSide->lsvRank, upSide->lsvDesc, upSide->isLand, upSide->isArtifact);
 }

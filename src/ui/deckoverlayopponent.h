@@ -8,37 +8,37 @@
 
 class DeckOverlayOpponent : public DeckOverlayBase
 {
-    Q_OBJECT
+  Q_OBJECT
 private:
-    int lastUiScale;
-    QString eventId, eventType;
+  int lastUiScale;
+  QString eventId, eventType;
 
 protected:
-    virtual int getDeckNameYPosition();
-    virtual int getHoverCardXPosition();
-    virtual QString getDeckColorIdentity();
-    virtual void onPositionChanged();
-    virtual void onScaleChanged();
-    virtual void afterPaintEvent(QPainter &painter);
-    void insertCard(Card* card);
+  virtual int getDeckNameYPosition();
+  virtual int getHoverCardXPosition();
+  virtual QString getDeckColorIdentity();
+  virtual void onPositionChanged();
+  virtual void onScaleChanged();
+  virtual void afterPaintEvent(QPainter& painter);
+  void insertCard(Card* card);
 
 public:
-    explicit DeckOverlayOpponent(QWidget *parent = nullptr);
-    ~DeckOverlayOpponent();
-    void applyCurrentSettings();
-    void setEventId(QString eventId);
-    void reset();
+  explicit DeckOverlayOpponent(QWidget* parent = nullptr);
+  ~DeckOverlayOpponent();
+  void applyCurrentSettings();
+  void setEventId(QString eventId);
+  void reset();
 
 signals:
 
-public slots:    
-    void onReceiveEventInfo(QString name, QString type);
-    void onOpponentPutOnLibraryCard(Card* card);
-    void onOpponentPutOnHandCard(Card* card);
-    void onOpponentPlayCard(Card* card);
-    void onOpponentDiscardCard(Card* card);
-    void onOpponentDiscardFromLibraryCard(Card* card);
-    void onOpponentPutOnBattlefieldCard(Card* card);
+public slots:
+  void onReceiveEventInfo(QString name, QString type);
+  void onOpponentPutOnLibraryCard(Card* card);
+  void onOpponentPutOnHandCard(Card* card);
+  void onOpponentPlayCard(Card* card);
+  void onOpponentDiscardCard(Card* card);
+  void onOpponentDiscardFromLibraryCard(Card* card);
+  void onOpponentPutOnBattlefieldCard(Card* card);
 };
 
-#endif // DECKOVERLAYOPPONENT_H
+#endif  // DECKOVERLAYOPPONENT_H

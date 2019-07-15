@@ -13,32 +13,32 @@
 
 class MtgCards : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 
 private:
-    void updateMtgaSetsFromAPIRequestOnFinish();
-    void downloadSet(QString setCodeVersion);
-    void downloadSetOnFinish();
-    void loadSet(QString setCode);
-    void loadSetFromFile(QString setFileName);
-    Card* jsonObject2Card(QJsonObject jsonCard, QString setCode);
-    QList<QChar> getBoderColorUsingManaSymbols(QList<QString> manaSymbols, bool isArtifact);
-    QList<QChar> getLandBorderColorUsingColorIdentity(QJsonObject jsonCard);
-    Card* createSplitCard(Card* leftSide, Card* rightSide);
+  void updateMtgaSetsFromAPIRequestOnFinish();
+  void downloadSet(QString setCodeVersion);
+  void downloadSetOnFinish();
+  void loadSet(QString setCode);
+  void loadSetFromFile(QString setFileName);
+  Card* jsonObject2Card(QJsonObject jsonCard, QString setCode);
+  QList<QChar> getBoderColorUsingManaSymbols(QList<QString> manaSymbols, bool isArtifact);
+  QList<QChar> getLandBorderColorUsingColorIdentity(QJsonObject jsonCard);
+  Card* createSplitCard(Card* leftSide, Card* rightSide);
 
-    QString setsDir;
-    QMap<int, Card*> cards;		//indexed by mtgaId
-    QNetworkAccessManager networkManager;
+  QString setsDir;
+  QMap<int, Card*> cards;  // indexed by mtgaId
+  QNetworkAccessManager networkManager;
 
 public:
-    MtgCards(QObject *parent = nullptr);
-    Card* findCard(int mtgaId);
-    void getMtgaSetsFromAPI();
-    void updateMtgaSetsFromAPI();
+  MtgCards(QObject* parent = nullptr);
+  Card* findCard(int mtgaId);
+  void getMtgaSetsFromAPI();
+  void updateMtgaSetsFromAPI();
 
 signals:
 
 public slots:
 };
 
-#endif // MTGCARDS_H
+#endif  // MTGCARDS_H

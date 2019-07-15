@@ -3,17 +3,14 @@
 
 #include "requestdata.h"
 
-class RqtParseDeckPosSide: public RequestData
+class RqtParseDeckPosSide : public RequestData
 {
 public:
-    RqtParseDeckPosSide(QString type, QString payload) {
-        _body = QJsonDocument(
-                    QJsonObject({
-                                    { "type", type },
-                                    { "data", payload }
-                                }));
-        _path = "protobuf";
-    }
+  RqtParseDeckPosSide(QString type, QString payload)
+  {
+    _body = QJsonDocument(QJsonObject({ { "type", type }, { "data", payload } }));
+    _path = "protobuf";
+  }
 };
 
-#endif // RQTPARSEDECKPOSSIDE_H
+#endif  // RQTPARSEDECKPOSSIDE_H

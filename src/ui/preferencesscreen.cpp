@@ -2,86 +2,88 @@
 #include "ui_preferences.h"
 #include "../macros.h"
 
-PreferencesScreen::PreferencesScreen(QWidget *parent) : QMainWindow(parent),
-    ui(new Ui::Preferences())
+PreferencesScreen::PreferencesScreen(QWidget* parent) : QMainWindow(parent), ui(new Ui::Preferences())
 {
-    ui->setupUi(this);
-    setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint | Qt::MSWindowsFixedSizeDialogHint);
-    setWindowTitle(TITLE());
+  ui->setupUi(this);
+  setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint | Qt::MSWindowsFixedSizeDialogHint);
+  setWindowTitle(TITLE());
 
-    QActionGroup *group = new QActionGroup(this);
-    group->setExclusive(true);
+  QActionGroup* group = new QActionGroup(this);
+  group->setExclusive(true);
 
-    ui->actionGeneral->setActionGroup(group);
-    ui->actionGeneral->setProperty("pageIndex", 0);
-    ui->actionOverlay->setActionGroup(group);
-    ui->actionOverlay->setProperty("pageIndex", 1);
-    ui->actionLogs->setActionGroup(group);
-    ui->actionLogs->setProperty("pageIndex", 2);
-    ui->actionAbout->setActionGroup(group);
-    ui->actionAbout->setProperty("pageIndex", 3);
+  ui->actionGeneral->setActionGroup(group);
+  ui->actionGeneral->setProperty("pageIndex", 0);
+  ui->actionOverlay->setActionGroup(group);
+  ui->actionOverlay->setProperty("pageIndex", 1);
+  ui->actionLogs->setActionGroup(group);
+  ui->actionLogs->setProperty("pageIndex", 2);
+  ui->actionAbout->setActionGroup(group);
+  ui->actionAbout->setProperty("pageIndex", 3);
 
-    tabGeneral = new TabGeneral(this);
-    tabOverlay = new TabOverlay(this);
-    tabLogs = new TabLogs(this);
-    tabAbout = new TabAbout(this);
+  tabGeneral = new TabGeneral(this);
+  tabOverlay = new TabOverlay(this);
+  tabLogs = new TabLogs(this);
+  tabAbout = new TabAbout(this);
 
-    tabs[0] = tabGeneral;
-    tabs[1] = tabOverlay;
-    tabs[2] = tabLogs;
-    tabs[3] = tabAbout;
+  tabs[0] = tabGeneral;
+  tabs[1] = tabOverlay;
+  tabs[2] = tabLogs;
+  tabs[3] = tabAbout;
 
-    QLayout *layout = ui->preferencesWidget->layout();
-    for( int i = 0; i < NUM_TABS; i++ ) {
-        layout->addWidget(tabs[i]);
-    }
+  QLayout* layout = ui->preferencesWidget->layout();
+  for (int i = 0; i < NUM_TABS; i++)
+  {
+    layout->addWidget(tabs[i]);
+  }
 
-    connect(group, &QActionGroup::triggered,
-            this, &PreferencesScreen::tabClick );
-    ui->actionGeneral->trigger();
+  connect(group, &QActionGroup::triggered, this, &PreferencesScreen::tabClick);
+  ui->actionGeneral->trigger();
 }
 
 PreferencesScreen::~PreferencesScreen()
 {
-    delete ui;
+  delete ui;
 }
 
-void PreferencesScreen::closeEvent(QCloseEvent *event)
+void PreferencesScreen::closeEvent(QCloseEvent* event)
 {
-    hide();
-    event->ignore();
+  hide();
+  event->ignore();
 }
 
-TabGeneral *PreferencesScreen::getTabGeneral()
+TabGeneral* PreferencesScreen::getTabGeneral()
 {
-    return tabGeneral;
+  return tabGeneral;
 }
 
-TabOverlay *PreferencesScreen::getTabOverlay()
+TabOverlay* PreferencesScreen::getTabOverlay()
 {
-    return tabOverlay;
+  return tabOverlay;
 }
 
-TabLogs *PreferencesScreen::getTabLogs()
+TabLogs* PreferencesScreen::getTabLogs()
 {
-    return tabLogs;
+  return tabLogs;
 }
 
-TabAbout *PreferencesScreen::getTabAbout()
+TabAbout* PreferencesScreen::getTabAbout()
 {
-    return tabAbout;
+  return tabAbout;
 }
 
-void PreferencesScreen::tabClick(QAction *action) {
-    int pageIndex = action->property("pageIndex").toInt();
-    for (int i = 0; i<NUM_TABS; i++) {
-        tabs[i]->hide();
-    }
-    ui->statusBar->hide();
-    if (tabs[pageIndex] == tabGeneral || tabs[pageIndex] == tabOverlay) {
-        ui->statusBar->show();
-    }
-    tabs[pageIndex]->show();
-    resize(0, 0);
-    adjustSize();
+void PreferencesScreen::tabClick(QAction* action)
+{
+  int pageIndex = action->property("pageIndex").toInt();
+  for (int i = 0; i < NUM_TABS; i++)
+  {
+    tabs[i]->hide();
+  }
+  ui->statusBar->hide();
+  if (tabs[pageIndex] == tabGeneral || tabs[pageIndex] == tabOverlay)
+  {
+    ui->statusBar->show();
+  }
+  tabs[pageIndex]->show();
+  resize(0, 0);
+  adjustSize();
 }

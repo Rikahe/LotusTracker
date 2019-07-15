@@ -12,21 +12,24 @@
 
 bool WinAutoStart::isEnabled()
 {
-    QString applicationName = QCoreApplication::applicationName();
-    QSettings settings(REGISTER_RUN_PATH, QSettings::NativeFormat);
-    return !settings.value(applicationName).toString().isEmpty();
+  QString applicationName = QCoreApplication::applicationName();
+  QSettings settings(REGISTER_RUN_PATH, QSettings::NativeFormat);
+  return !settings.value(applicationName).toString().isEmpty();
 }
 
 void WinAutoStart::setEnabled(bool enabled)
 {
-    QString applicationName = QCoreApplication::applicationName();
-    QString applicationPath = QCoreApplication::applicationFilePath();
+  QString applicationName = QCoreApplication::applicationName();
+  QString applicationPath = QCoreApplication::applicationFilePath();
 
-    QSettings settings(REGISTER_RUN_PATH, QSettings::NativeFormat);
-    if(enabled) {
-        QString filePath = QDir::toNativeSeparators(QFileInfo(applicationPath).filePath());
-        settings.setValue(applicationName, QString("\"%1\"").arg(filePath));
-    } else {
-        settings.remove(applicationName);
-    }
+  QSettings settings(REGISTER_RUN_PATH, QSettings::NativeFormat);
+  if (enabled)
+  {
+    QString filePath = QDir::toNativeSeparators(QFileInfo(applicationPath).filePath());
+    settings.setValue(applicationName, QString("\"%1\"").arg(filePath));
+  }
+  else
+  {
+    settings.remove(applicationName);
+  }
 }

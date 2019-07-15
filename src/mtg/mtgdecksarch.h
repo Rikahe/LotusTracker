@@ -13,31 +13,29 @@
 
 class MtgDecksArch : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 
 private:
-    void downloadDecksArch();
-    void downloadDecksArchOnFinish();
-    void loadDecksArch();
-    void loadDecksArchFromFile();
-    double getCardsSimilarityForDeckArch(QMap<Card*, int> cards, QMap<int, double> archCards);
-    double getSimilarityPercentDifference(QPair<DeckArch, double> archFirst,
-                                         QPair<DeckArch, double> archSecond);
-    static bool deckArchSimilarityComparator(const QPair<DeckArch, double>& first,
-                                             const QPair<DeckArch, double>& second);
+  void downloadDecksArch();
+  void downloadDecksArchOnFinish();
+  void loadDecksArch();
+  void loadDecksArchFromFile();
+  double getCardsSimilarityForDeckArch(QMap<Card*, int> cards, QMap<int, double> archCards);
+  double getSimilarityPercentDifference(QPair<DeckArch, double> archFirst, QPair<DeckArch, double> archSecond);
+  static bool deckArchSimilarityComparator(const QPair<DeckArch, double>& first, const QPair<DeckArch, double>& second);
 
-    QString dataDir;
-    QNetworkAccessManager networkManager;
-    QList<DeckArch> deckArchs;
+  QString dataDir;
+  QNetworkAccessManager networkManager;
+  QList<DeckArch> deckArchs;
 
 public:
-    MtgDecksArch(QObject *parent = nullptr);
-    QString findDeckArchitecture(QMap<Card*, int> cards);
-    void updateDecksArchitectureFromAPI();
+  MtgDecksArch(QObject* parent = nullptr);
+  QString findDeckArchitecture(QMap<Card*, int> cards);
+  void updateDecksArchitectureFromAPI();
 
 signals:
 
 public slots:
 };
 
-#endif // MTGDECKSARCH_H
+#endif  // MTGDECKSARCH_H

@@ -10,13 +10,12 @@
 
 class WinWindowFinder : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 public:
   WinWindowFinder();
 
   static HWND findWindow(const QString& name, const QString& title);
   static bool isWindowFocused(HWND hwnd);
-
 };
 
-#endif // WINWINDOWFINDER_H
+#endif  // WINWINDOWFINDER_H

@@ -10,69 +10,75 @@
 
 bool MacAutoStart::isEnabled()
 {
-    LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+  LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
 
-    if(!loginItems) {
-        return false;
-    }
+  if (!loginItems)
+  {
+    return false;
+  }
 
-    UInt32 seed = 0U;
-    CFArrayRef currentLoginItems = LSSharedFileListCopySnapshot(loginItems, &seed);
-    LSSharedFileListItemRef existingItem = findLoginItemForCurrentBundle(currentLoginItems);
+  UInt32 seed = 0U;
+  CFArrayRef currentLoginItems = LSSharedFileListCopySnapshot(loginItems, &seed);
+  LSSharedFileListItemRef existingItem = findLoginItemForCurrentBundle(currentLoginItems);
 
-    bool isAutoRun = existingItem != NULL;
-    CFRelease(currentLoginItems);
-    CFRelease(loginItems);
+  bool isAutoRun = existingItem != NULL;
+  CFRelease(currentLoginItems);
+  CFRelease(loginItems);
 
-    return isAutoRun;
+  return isAutoRun;
 }
 
 void MacAutoStart::setEnabled(bool enabled)
 {
-    LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+  LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
 
-    if(!loginItems)
-        return;
+  if (!loginItems)
+    return;
 
-    UInt32 seed = 0U;
-    CFArrayRef currentLoginItems = LSSharedFileListCopySnapshot(loginItems, &seed);
-    LSSharedFileListItemRef existingItem = findLoginItemForCurrentBundle(currentLoginItems);
+  UInt32 seed = 0U;
+  CFArrayRef currentLoginItems = LSSharedFileListCopySnapshot(loginItems, &seed);
+  LSSharedFileListItemRef existingItem = findLoginItemForCurrentBundle(currentLoginItems);
 
-    if(enabled && (existingItem == NULL)) {
-        CFURLRef mainBundleURL = CFBundleCopyBundleURL(CFBundleGetMainBundle());
-        LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, mainBundleURL, NULL, NULL);
-        CFRelease(mainBundleURL);
-    }
-    else if(!enabled && (existingItem != NULL)) {
-        LSSharedFileListItemRemove(loginItems, existingItem);
-    }
+  if (enabled && (existingItem == NULL))
+  {
+    CFURLRef mainBundleURL = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+    LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, mainBundleURL, NULL, NULL);
+    CFRelease(mainBundleURL);
+  }
+  else if (!enabled && (existingItem != NULL))
+  {
+    LSSharedFileListItemRemove(loginItems, existingItem);
+  }
 
-    CFRelease(currentLoginItems);
-    CFRelease(loginItems);
+  CFRelease(currentLoginItems);
+  CFRelease(loginItems);
 }
 
 LSSharedFileListItemRef MacAutoStart::findLoginItemForCurrentBundle(CFArrayRef currentLoginItems)
 {
-    CFURLRef mainBundleURL = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+  CFURLRef mainBundleURL = CFBundleCopyBundleURL(CFBundleGetMainBundle());
 
-    for(int i = 0, end = CFArrayGetCount(currentLoginItems); i < end; ++i) {
-        LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(currentLoginItems, i);
+  for (int i = 0, end = CFArrayGetCount(currentLoginItems); i < end; ++i)
+  {
+    LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(currentLoginItems, i);
 
-        UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
-        CFURLRef url = NULL;
-        OSStatus err = LSSharedFileListItemResolve(item, resolutionFlags, &url, NULL);
+    UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
+    CFURLRef url = NULL;
+    OSStatus err = LSSharedFileListItemResolve(item, resolutionFlags, &url, NULL);
 
-        if(err == noErr) {
-            bool foundIt = CFEqual(url, mainBundleURL);
-            CFRelease(url);
+    if (err == noErr)
+    {
+      bool foundIt = CFEqual(url, mainBundleURL);
+      CFRelease(url);
 
-            if(foundIt) {
-                CFRelease(mainBundleURL);
-                return item;
-            }
-        }
+      if (foundIt)
+      {
+        CFRelease(mainBundleURL);
+        return item;
+      }
     }
+  }
 
-    CFRelease(mainBundleURL);
-    return NULL;
+  CFRelease(mainBundleURL);
+  return NULL;
 }

@@ -9,11 +9,11 @@
 class MacAutoStart
 {
 private:
-	static LSSharedFileListItemRef findLoginItemForCurrentBundle(CFArrayRef currentLoginItems);
+  static LSSharedFileListItemRef findLoginItemForCurrentBundle(CFArrayRef currentLoginItems);
 
 public:
-	static bool isEnabled();
-    static void setEnabled(bool enabled);
+  static bool isEnabled();
+  static void setEnabled(bool enabled);
 };
 
-#endif // MACAUTOSTART_H
+#endif  // MACAUTOSTART_H

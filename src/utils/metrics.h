@@ -3,6 +3,6 @@
 
 #include "influxdb.hpp"
 
-void influx_metric(influxdb_cpp::detail::tag_or_field_caller &);
+void influx_metric(influxdb_cpp::detail::tag_or_field_caller&);
 
-#endif // METRICS_H
+#endif  // METRICS_H

@@ -8,28 +8,28 @@
 
 class MtgaLogWatcher : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 
 private:
-    QString logPath;
-	QFile *logFile;
-    QTimer *timer;
-    QString logFilePath;
-    qint64 lastFilePos;
-    void checkForNewLogs();
+  QString logPath;
+  QFile* logFile;
+  QTimer* timer;
+  QString logFilePath;
+  qint64 lastFilePos;
+  void checkForNewLogs();
 
 public:
-    MtgaLogWatcher(QObject *parent);
-    ~MtgaLogWatcher();
-    void setLogPath(QString filePath);
-    void onGameFocusChanged(bool hasFocus);
-    void startWatching();
-    void stopWatching();
+  MtgaLogWatcher(QObject* parent);
+  ~MtgaLogWatcher();
+  void setLogPath(QString filePath);
+  void onGameFocusChanged(bool hasFocus);
+  void startWatching();
+  void stopWatching();
 
 signals:
-	void sgnNewLogContent(QString logNewContent);
+  void sgnNewLogContent(QString logNewContent);
 
 public slots:
 };
 
-#endif // MTGALOGWATCHER_H
+#endif  // MTGALOGWATCHER_H

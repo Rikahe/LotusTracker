@@ -9,41 +9,46 @@
 
 class CardBlinkInfo : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    QMainWindow *parentQMainWindow;
-    Card* card;
-    QTimer* timer;
-    int alpha;
-    int acc;
+  QMainWindow* parentQMainWindow;
+  Card* card;
+  QTimer* timer;
+  int alpha;
+  int acc;
 
-    CardBlinkInfo(QMainWindow *parentQMainWindow, Card* card, QTimer* timer):
-        parentQMainWindow(parentQMainWindow), card(card), timer(timer), alpha(200){
-        acc = 0;
-    }
+  CardBlinkInfo(QMainWindow* parentQMainWindow, Card* card, QTimer* timer)
+    : parentQMainWindow(parentQMainWindow), card(card), timer(timer), alpha(200)
+  {
+    acc = 0;
+  }
 
-    ~CardBlinkInfo()
+  ~CardBlinkInfo()
+  {
+    if (timer)
     {
-        if (timer) {
-            if (timer->isActive()) {
-                timer->stop();
-            }
-            delete timer;
-        }
+      if (timer->isActive())
+      {
+        timer->stop();
+      }
+      delete timer;
     }
+  }
 
 public slots:
-    void timeout(){
-        acc += 3;
-        alpha -= 5 + acc;
-        if (alpha <= 0) {
-            acc = 0;
-            alpha = 0;
-            timer->stop();
-        }
-        parentQMainWindow->update();
+  void timeout()
+  {
+    acc += 3;
+    alpha -= 5 + acc;
+    if (alpha <= 0)
+    {
+      acc = 0;
+      alpha = 0;
+      timer->stop();
     }
+    parentQMainWindow->update();
+  }
 };
 
-#endif // BLINKINFO_H
+#endif  // BLINKINFO_H

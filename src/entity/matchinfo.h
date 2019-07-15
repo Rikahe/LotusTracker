@@ -9,55 +9,61 @@
 #include <QString>
 #include <QElapsedTimer>
 
-typedef enum {
-    MatchMode_SINGLE,
-    MatchMode_BEST_OF_3,
-    MatchMode_UNKNOWN
+typedef enum
+{
+  MatchMode_SINGLE,
+  MatchMode_BEST_OF_3,
+  MatchMode_UNKNOWN
 } MatchMode;
 
 class GameInfo
 {
 private:
-    QElapsedTimer timer;
+  QElapsedTimer timer;
 
 public:
-    bool playerGoFirst, playerMulligan, opponentMulligan, isCompleted, playerWins;
-    int duration;
-    Deck opponentDeck;
+  bool playerGoFirst, playerMulligan, opponentMulligan, isCompleted, playerWins;
+  int duration;
+  Deck opponentDeck;
 
-    GameInfo(): playerGoFirst(false), playerMulligan(false), opponentMulligan(false),
-        isCompleted(false), playerWins(false), duration(0), opponentDeck(Deck()){
-        timer.start();
-    }
+  GameInfo()
+    : playerGoFirst(false)
+    , playerMulligan(false)
+    , opponentMulligan(false)
+    , isCompleted(false)
+    , playerWins(false)
+    , duration(0)
+    , opponentDeck(Deck())
+  {
+    timer.start();
+  }
 
-    void finish(bool playerGameWins)
-    {
-        duration = static_cast<int>(timer.elapsed() / 1000);
-        playerWins = playerGameWins;
-        isCompleted = true;
-    }
-
+  void finish(bool playerGameWins)
+  {
+    duration = static_cast<int>(timer.elapsed() / 1000);
+    playerWins = playerGameWins;
+    isCompleted = true;
+  }
 };
 
 class MatchInfo
 {
 public:
-    QString eventId;
-    OpponentInfo opponentInfo;
-    MatchMode mode;
-    QList<GameInfo> games;
-    bool playerMatchWins;
-    int playerGameWins, playerGameLoses;
+  QString eventId;
+  OpponentInfo opponentInfo;
+  MatchMode mode;
+  QList<GameInfo> games;
+  bool playerMatchWins;
+  int playerGameWins, playerGameLoses;
 
-    explicit MatchInfo(QString eventId = "", OpponentInfo opponentInfo = OpponentInfo());
-    void createNewGame();
-    GameInfo& currentGame();
-    QMap<Card*, int> getOpponentMatchesCards();
-    QString getOpponentDeckArch();
-    QString getOpponentDeckColorIdentity();
+  explicit MatchInfo(QString eventId = "", OpponentInfo opponentInfo = OpponentInfo());
+  void createNewGame();
+  GameInfo& currentGame();
+  QMap<Card*, int> getOpponentMatchesCards();
+  QString getOpponentDeckArch();
+  QString getOpponentDeckColorIdentity();
 
-    static QString MatchModeToString(MatchMode matchMode);
-
+  static QString MatchModeToString(MatchMode matchMode);
 };
 
-#endif // MATCHINFO_H
+#endif  // MATCHINFO_H

@@ -22,146 +22,135 @@
 #define LOG_FILE_FILTER "Arena Log (output_log.txt)"
 #endif
 
-TabGeneral::TabGeneral(QWidget *parent)
-    : QWidget(parent), ui(new Ui::TabGeneral)
+TabGeneral::TabGeneral(QWidget* parent) : QWidget(parent), ui(new Ui::TabGeneral)
 {
-    ui->setupUi(this);
-    applyCurrentSettings();
-    connect(ui->btCheckUpdate, &QPushButton::clicked, this, [] {
-        LOTUS_TRACKER->sparkleUpdater->CheckForUpdatesNow();
-    });
+  ui->setupUi(this);
+  applyCurrentSettings();
+  connect(ui->btCheckUpdate, &QPushButton::clicked, this, [] { LOTUS_TRACKER->sparkleUpdater->CheckForUpdatesNow(); });
 
 #if defined Q_OS_WIN
-    ui->lbLogLocation->hide();
-    ui->leLog->hide();
-    ui->btOpenLog->hide();
+  ui->lbLogLocation->hide();
+  ui->leLog->hide();
+  ui->btOpenLog->hide();
 #endif
-    connect(ui->btOpenLog, &QPushButton::clicked,
-            this, &TabGeneral::onChangeLogPathClicked);
-    connect(ui->cbStartAtLogin, &QCheckBox::clicked,
-            this, &TabGeneral::onStartAtLoginChanged);
-    connect(ui->cbAutoUpdate, &QCheckBox::clicked,
-            this, &TabGeneral::onAutoUpdateChanged);
-    connect(ui->cbPOEnabled, &QCheckBox::clicked,
-            this, &TabGeneral::onPOEnabledChanged);
-    connect(ui->cbOOEnabled, &QCheckBox::clicked,
-            this, &TabGeneral::onOOEnabledChanged);
-    connect(ui->cbSDADEnabled, &QCheckBox::clicked,
-            this, &TabGeneral::onSDADEnabledChanged);
-    connect(ui->cbDOEnabled, &QCheckBox::clicked,
-            this, &TabGeneral::onDOEnabledChanged);
-    connect(ui->cbHideOnLoseGameFocus, &QCheckBox::clicked,
-            this, &TabGeneral::onHideOnLoseGameFocusChanged);
-    connect(ui->btReset, &QPushButton::clicked,
-            this, &TabGeneral::onRestoreDefaultsSettingsClicked);
+  connect(ui->btOpenLog, &QPushButton::clicked, this, &TabGeneral::onChangeLogPathClicked);
+  connect(ui->cbStartAtLogin, &QCheckBox::clicked, this, &TabGeneral::onStartAtLoginChanged);
+  connect(ui->cbAutoUpdate, &QCheckBox::clicked, this, &TabGeneral::onAutoUpdateChanged);
+  connect(ui->cbPOEnabled, &QCheckBox::clicked, this, &TabGeneral::onPOEnabledChanged);
+  connect(ui->cbOOEnabled, &QCheckBox::clicked, this, &TabGeneral::onOOEnabledChanged);
+  connect(ui->cbSDADEnabled, &QCheckBox::clicked, this, &TabGeneral::onSDADEnabledChanged);
+  connect(ui->cbDOEnabled, &QCheckBox::clicked, this, &TabGeneral::onDOEnabledChanged);
+  connect(ui->cbHideOnLoseGameFocus, &QCheckBox::clicked, this, &TabGeneral::onHideOnLoseGameFocusChanged);
+  connect(ui->btReset, &QPushButton::clicked, this, &TabGeneral::onRestoreDefaultsSettingsClicked);
 }
 
 TabGeneral::~TabGeneral()
 {
-    DEL(ui)
+  DEL(ui)
 }
 
 void TabGeneral::applyCurrentSettings()
 {
-    // ui->leLog->setText(APP_SETTINGS->getLogPath());
-    // ui->cbStartAtLogin->setChecked(APP_SETTINGS->isAutoStartEnabled());
-    // ui->btCheckUpdate->setChecked(LOTUS_TRACKER->sparkleUpdater->AutomaticallyChecksForUpdates());
-    // ui->cbPOEnabled->setChecked(APP_SETTINGS->isDeckOverlayPlayerEnabled());
-    // ui->cbOOEnabled->setChecked(APP_SETTINGS->isDeckOverlayOpponentEnabled());
-    // ui->cbSDADEnabled->setChecked(APP_SETTINGS->isShowDeckAfterDraftEnabled());
-    // ui->cbDOEnabled->setChecked(APP_SETTINGS->isDeckOverlayDraftEnabled());
-    // ui->cbHideOnLoseGameFocus->setChecked(APP_SETTINGS->isHideOnLoseGameFocusEnabled());
+  // ui->leLog->setText(APP_SETTINGS->getLogPath());
+  // ui->cbStartAtLogin->setChecked(APP_SETTINGS->isAutoStartEnabled());
+  // ui->btCheckUpdate->setChecked(LOTUS_TRACKER->sparkleUpdater->AutomaticallyChecksForUpdates());
+  // ui->cbPOEnabled->setChecked(APP_SETTINGS->isDeckOverlayPlayerEnabled());
+  // ui->cbOOEnabled->setChecked(APP_SETTINGS->isDeckOverlayOpponentEnabled());
+  // ui->cbSDADEnabled->setChecked(APP_SETTINGS->isShowDeckAfterDraftEnabled());
+  // ui->cbDOEnabled->setChecked(APP_SETTINGS->isDeckOverlayDraftEnabled());
+  // ui->cbHideOnLoseGameFocus->setChecked(APP_SETTINGS->isHideOnLoseGameFocusEnabled());
 }
 
 void TabGeneral::onStartAtLoginChanged()
 {
-    bool enabled = ui->cbStartAtLogin->isChecked();
+  bool enabled = ui->cbStartAtLogin->isChecked();
 #if defined Q_OS_MAC
-    MacAutoStart::setEnabled(enabled);
+  MacAutoStart::setEnabled(enabled);
 #elif defined Q_OS_WIN
-    WinAutoStart::setEnabled(enabled);
+  WinAutoStart::setEnabled(enabled);
 #endif
-    LOGD(QString("StartAtLogin: %1").arg(enabled ? "true" : "false"));
-    APP_SETTINGS->enableAutoStart(enabled);
+  LOGD(QString("StartAtLogin: %1").arg(enabled ? "true" : "false"));
+  APP_SETTINGS->enableAutoStart(enabled);
 }
 
 void TabGeneral::onAutoUpdateChanged()
 {
-    bool enabled = ui->cbAutoUpdate->isChecked();
-    LOTUS_TRACKER->sparkleUpdater->SetAutomaticallyChecksForUpdates(enabled);
-    LOGD(QString("AutoUpdate: %1").arg(enabled ? "true" : "false"));
-    APP_SETTINGS->enableAutoUpdate(enabled);
+  bool enabled = ui->cbAutoUpdate->isChecked();
+  LOTUS_TRACKER->sparkleUpdater->SetAutomaticallyChecksForUpdates(enabled);
+  LOGD(QString("AutoUpdate: %1").arg(enabled ? "true" : "false"));
+  APP_SETTINGS->enableAutoUpdate(enabled);
 }
 
 void TabGeneral::onChangeLogPathClicked()
 {
-    QString file = QFileDialog::getOpenFileName(this,
-            tr("Open magic arena log"), "", tr(LOG_FILE_FILTER));
-    if (file.isEmpty())
-        return;
-    else {
-        QString logFileName = QString("%1output_log.txt").arg(QDir::separator());
-        if (file.endsWith(logFileName)) {
-            file = file.replace(logFileName, "");
-        }
-        if (file.endsWith(".app")) {
-            QString homeDir = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
-            QString userName = homeDir.right(homeDir.length() - homeDir.lastIndexOf(QDir::separator()) - 1);
-            file = file + QDir::separator() + "Contents" + QDir::separator() + "Resources" +
-                    QDir::separator() + "drive_c" + QDir::separator() + "users" +
-                    QDir::separator() + userName + QDir::separator() + LOG_PATH;
-        }
-        LOTUS_TRACKER->appSettings->setLogPath(file);
-        ui->leLog->setText(file);
-        emit sgnLogFilePathChanged(file);
+  QString file = QFileDialog::getOpenFileName(this, tr("Open magic arena log"), "", tr(LOG_FILE_FILTER));
+  if (file.isEmpty())
+    return;
+  else
+  {
+    QString logFileName = QString("%1output_log.txt").arg(QDir::separator());
+    if (file.endsWith(logFileName))
+    {
+      file = file.replace(logFileName, "");
     }
+    if (file.endsWith(".app"))
+    {
+      QString homeDir = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+      QString userName = homeDir.right(homeDir.length() - homeDir.lastIndexOf(QDir::separator()) - 1);
+      file = file + QDir::separator() + "Contents" + QDir::separator() + "Resources" + QDir::separator() + "drive_c" +
+             QDir::separator() + "users" + QDir::separator() + userName + QDir::separator() + LOG_PATH;
+    }
+    LOTUS_TRACKER->appSettings->setLogPath(file);
+    ui->leLog->setText(file);
+    emit sgnLogFilePathChanged(file);
+  }
 }
 
 void TabGeneral::onDOEnabledChanged()
 {
-    bool enabled = ui->cbDOEnabled->isChecked();
-    emit sgnDeckOverlayDraftEnabled(enabled);
-    LOGD(QString("DeckOverlayDraftEnabled: %1").arg(enabled ? "true" : "false"));
-    APP_SETTINGS->enableDeckOverlayDraft(enabled);
+  bool enabled = ui->cbDOEnabled->isChecked();
+  emit sgnDeckOverlayDraftEnabled(enabled);
+  LOGD(QString("DeckOverlayDraftEnabled: %1").arg(enabled ? "true" : "false"));
+  APP_SETTINGS->enableDeckOverlayDraft(enabled);
 }
 
 void TabGeneral::onPOEnabledChanged()
 {
-    bool enabled = ui->cbPOEnabled->isChecked();
-    emit sgnPlayerOverlayEnabled(enabled);
-    LOGD(QString("PlayerOverlayEnabled: %1").arg(enabled ? "true" : "false"));
-    APP_SETTINGS->enableDeckOverlayPlayer(enabled);
+  bool enabled = ui->cbPOEnabled->isChecked();
+  emit sgnPlayerOverlayEnabled(enabled);
+  LOGD(QString("PlayerOverlayEnabled: %1").arg(enabled ? "true" : "false"));
+  APP_SETTINGS->enableDeckOverlayPlayer(enabled);
 }
 
 void TabGeneral::onOOEnabledChanged()
 {
-    bool enabled = ui->cbOOEnabled->isChecked();
-    emit sgnOpponentOverlayEnabled(enabled);
-    LOGD(QString("DeckOverlayOpponent: %1").arg(enabled ? "true" : "false"));
-    APP_SETTINGS->enableDeckOverlayOpponent(enabled);
+  bool enabled = ui->cbOOEnabled->isChecked();
+  emit sgnOpponentOverlayEnabled(enabled);
+  LOGD(QString("DeckOverlayOpponent: %1").arg(enabled ? "true" : "false"));
+  APP_SETTINGS->enableDeckOverlayOpponent(enabled);
 }
 
 void TabGeneral::onSDADEnabledChanged()
 {
-    bool enabled = ui->cbSDADEnabled->isChecked();
-    LOGD(QString("ShowDeckAfterDraft: %1").arg(enabled ? "true" : "false"));
-    APP_SETTINGS->enableShowDeckAfterDraft(enabled);
+  bool enabled = ui->cbSDADEnabled->isChecked();
+  LOGD(QString("ShowDeckAfterDraft: %1").arg(enabled ? "true" : "false"));
+  APP_SETTINGS->enableShowDeckAfterDraft(enabled);
 }
 
 void TabGeneral::onHideOnLoseGameFocusChanged()
 {
-    bool enabled = ui->cbHideOnLoseGameFocus->isChecked();
-    LOGD(QString("HideOnLoseGameFocus: %1").arg(enabled ? "true" : "false"));
-    APP_SETTINGS->enableHideOnLoseGameFocus(enabled);
+  bool enabled = ui->cbHideOnLoseGameFocus->isChecked();
+  LOGD(QString("HideOnLoseGameFocus: %1").arg(enabled ? "true" : "false"));
+  APP_SETTINGS->enableHideOnLoseGameFocus(enabled);
 }
 
 void TabGeneral::onRestoreDefaultsSettingsClicked()
 {
-    APP_SETTINGS->restoreDefaults();
-    applyCurrentSettings();
-    onStartAtLoginChanged();
-    onPOEnabledChanged();
-    onPOEnabledChanged();
-    onOOEnabledChanged();
-    emit sgnRestoreDefaults();
+  APP_SETTINGS->restoreDefaults();
+  applyCurrentSettings();
+  onStartAtLoginChanged();
+  onPOEnabledChanged();
+  onPOEnabledChanged();
+  onOOEnabledChanged();
+  emit sgnRestoreDefaults();
 }

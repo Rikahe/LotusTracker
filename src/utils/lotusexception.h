@@ -6,15 +6,17 @@
 
 class LotusException : public std::exception
 {
-    const QString content;
+  const QString content;
 
 public:
-    LotusException(QString content): content(content){}
+  LotusException(QString content) : content(content)
+  {
+  }
 
-    const char * what () const noexcept
-    {
-        return content.toUtf8();
-    }
+  const char* what() const noexcept
+  {
+    return content.toUtf8();
+  }
 };
 
-#endif // LOTUSEXCEPTION_H
+#endif  // LOTUSEXCEPTION_H

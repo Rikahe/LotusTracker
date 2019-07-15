@@ -4,19 +4,18 @@
 
 #include <QFontDatabase>
 
-TabAbout::TabAbout(QWidget *parent)
-    : QWidget(parent), ui(new Ui::TabAbout)
+TabAbout::TabAbout(QWidget* parent) : QWidget(parent), ui(new Ui::TabAbout)
 {
-    ui->setupUi(this);
+  ui->setupUi(this);
 
-    int belerenID = QFontDatabase::addApplicationFont(":/fonts/Beleren-Bold.ttf");
-    QFont trackerFont = ui->lbTracker->font();
-    trackerFont.setFamily(QFontDatabase::applicationFontFamilies(belerenID).at(0));
-    ui->lbTracker->setFont(trackerFont);
-    ui->lbVersion->setText(qApp->applicationVersion());
+  int belerenID = QFontDatabase::addApplicationFont(":/fonts/Beleren-Bold.ttf");
+  QFont trackerFont = ui->lbTracker->font();
+  trackerFont.setFamily(QFontDatabase::applicationFontFamilies(belerenID).at(0));
+  ui->lbTracker->setFont(trackerFont);
+  ui->lbVersion->setText(qApp->applicationVersion());
 }
 
 TabAbout::~TabAbout()
 {
-    DEL(ui)
+  DEL(ui)
 }

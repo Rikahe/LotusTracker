@@ -6,8 +6,8 @@
 class WinAutoStart
 {
 public:
-    static bool isEnabled();
-    static void setEnabled(bool enabled);
+  static bool isEnabled();
+  static void setEnabled(bool enabled);
 };
 
-#endif // WINAUTOSTART_H
+#endif  // WINAUTOSTART_H

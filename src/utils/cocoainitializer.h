@@ -12,4 +12,3 @@ public:
   CocoaInitializer();
   ~CocoaInitializer();
 };
-

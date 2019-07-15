@@ -6,22 +6,21 @@
 
 class UntappedAPI : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 private:
-    QNetworkAccessManager networkManager;
+  QNetworkAccessManager networkManager;
 
 public:
-    explicit UntappedAPI(QObject *parent = nullptr);
-    ~UntappedAPI();
+  explicit UntappedAPI(QObject* parent = nullptr);
+  ~UntappedAPI();
 
-    void fetchAnonymousUploadToken();
+  void fetchAnonymousUploadToken();
 
 signals:
-    void sgnNewAnonymousUploadToken(QString uploadToken);
+  void sgnNewAnonymousUploadToken(QString uploadToken);
 
 private slots:
-    void anonymousUploadTokenOnFinish();
-
+  void anonymousUploadTokenOnFinish();
 };
 
-#endif // UNTAPPEDAPI_H
+#endif  // UNTAPPEDAPI_H

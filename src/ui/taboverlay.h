@@ -3,39 +3,41 @@
 
 #include <QWidget>
 
-namespace Ui { class TabOverlay; }
+namespace Ui
+{
+class TabOverlay;
+}
 
 class TabOverlay : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
 
 private:
-    Ui::TabOverlay *ui;
-    void applyCurrentSettings();
-    void onCardLayoutChanged();
-    void onShowCardManaCostChanged();
-    void onShowCardOnHoverChanged();
-    void onShowOnlyRemainingCardsChanged();
-    void onTrackerAlphaChanged();
-    void onUnhideDelayChanged();
-    void onPTStatisticsChanged();
+  Ui::TabOverlay* ui;
+  void applyCurrentSettings();
+  void onCardLayoutChanged();
+  void onShowCardManaCostChanged();
+  void onShowCardOnHoverChanged();
+  void onShowOnlyRemainingCardsChanged();
+  void onTrackerAlphaChanged();
+  void onUnhideDelayChanged();
+  void onPTStatisticsChanged();
 
 public:
-    explicit TabOverlay(QWidget *parent = nullptr);
-    ~TabOverlay();
+  explicit TabOverlay(QWidget* parent = nullptr);
+  ~TabOverlay();
 
 signals:
-    void sgnTrackerAlpha(qreal alpha);
-    void sgnUnhideDelay(int delay);
-    void sgnTrackerCardLayout(QString cardLayout);
-    void sgnShowCardManaCostEnabled(bool enabled);
-    void sgnShowCardOnHoverEnabled(bool enabled);
-    void sgnShowOnlyRemainingCardsEnabled(bool enabled);
-    void sgnPlayerTrackerStatistics(bool enabled);
+  void sgnTrackerAlpha(qreal alpha);
+  void sgnUnhideDelay(int delay);
+  void sgnTrackerCardLayout(QString cardLayout);
+  void sgnShowCardManaCostEnabled(bool enabled);
+  void sgnShowCardOnHoverEnabled(bool enabled);
+  void sgnShowOnlyRemainingCardsEnabled(bool enabled);
+  void sgnPlayerTrackerStatistics(bool enabled);
 
 public slots:
-    void onRestoreDefaultsSettings();
-
+  void onRestoreDefaultsSettings();
 };
 
-#endif // TABOVERLAY_H
+#endif  // TABOVERLAY_H

@@ -7,17 +7,15 @@
 class DeckArch
 {
 public:
-    int id;
-    QString name;
-    QString colors;
-    QMap<int, double> cards;
+  int id;
+  QString name;
+  QString colors;
+  QMap<int, double> cards;
 
-    explicit DeckArch(int id = 0, QString name = "",
-                      QString colors = "", QMap<int, double> cards = {}):
-        id(id), name(name), colors(colors), cards(cards)
-    {
-    }
-
+  explicit DeckArch(int id = 0, QString name = "", QString colors = "", QMap<int, double> cards = {})
+    : id(id), name(name), colors(colors), cards(cards)
+  {
+  }
 };
 
-#endif // DECKARCH_H
+#endif  // DECKARCH_H

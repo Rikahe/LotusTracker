@@ -6,17 +6,18 @@
 
 // All credits to Track o'bot - https://github.com/stevschmid/track-o-bot
 
-class MacSparkleUpdater : public SparkleUpdater {
+class MacSparkleUpdater : public SparkleUpdater
+{
 private:
   class Private;
   Private* d;
 
 public:
-  MacSparkleUpdater( const QString& url );
+  MacSparkleUpdater(const QString& url);
   ~MacSparkleUpdater();
 
   virtual void CheckForUpdatesNow();
 
-  virtual void SetAutomaticallyChecksForUpdates( bool automaticallyChecks );
+  virtual void SetAutomaticallyChecksForUpdates(bool automaticallyChecks);
   virtual bool AutomaticallyChecksForUpdates();
 };
