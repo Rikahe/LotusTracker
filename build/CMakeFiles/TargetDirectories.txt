@@ -1,4 +1,0 @@
-/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/rebuild_cache.dir
-/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/LotusTracker.dir
-/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/edit_cache.dir
-/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/LotusTracker_autogen.dir
