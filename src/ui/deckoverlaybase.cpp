@@ -6,8 +6,8 @@
 #include <QDir>
 #include <QFile>
 #include <QFontDatabase>
-#include <QNetworkRequest>
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
 #include <QStandardPaths>
 #include <QToolTip>
 #include <QUrlQuery>

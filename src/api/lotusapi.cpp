@@ -12,8 +12,8 @@
 
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QNetworkRequest>
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
 #include <QUrl>
 
 #define HEADER_AUTHORIZATION "Authorization"

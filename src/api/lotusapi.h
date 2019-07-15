@@ -9,7 +9,7 @@
 
 #include <QBuffer>
 #include <QObject>
-#include <QNetworkAccessManager>
+#include <QtNetwork/QNetworkAccessManager>
 #include <QMap>
 
 class LotusTrackerAPI : public QObject

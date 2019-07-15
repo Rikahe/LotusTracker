@@ -4,8 +4,8 @@
 
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QNetworkRequest>
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
 #include <QUrl>
 
 #define API_BASE_URL "https://api.mtga.untapped.gg/api/v1"

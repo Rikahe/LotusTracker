@@ -15,9 +15,9 @@
 #include <cstring>
 #include <cstdio>
 #include <memory>
-#include <QHostInfo>
+#include <QtNetwork/QHostInfo>
 #include <QString>
-#include <QUdpSocket>
+#include <QtNetwork/QUdpSocket>
 
 namespace influxdb_cpp {
     namespace detail {

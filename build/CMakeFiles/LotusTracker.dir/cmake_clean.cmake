@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "LotusTracker_autogen"
+  "CMakeFiles/LotusTracker_autogen.dir/AutogenOldSettings.cmake"
+  "CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/main.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ganalytics.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/transformations.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o"
+  "CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o"
+  "LotusTracker.pdb"
+  "LotusTracker"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/LotusTracker.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

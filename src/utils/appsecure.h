@@ -2,7 +2,7 @@
 #define APPSECURE_H
 
 #include <QObject>
-#include <keychain.h>
+#include <qt5keychain/keychain.h>
 
 using namespace QKeychain;
 

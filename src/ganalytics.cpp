@@ -5,9 +5,9 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QLocale>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QNetworkRequest>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
 #include <QQueue>
 #include <QSettings>
 #include <QTimer>

@@ -24,7 +24,7 @@
 
 #include <crow/crow.hpp>
 #include <QApplication>
-#include <QLocalServer>
+#include <QtNetwork/QLocalServer>
 #include <QQueue>
 #include <QTimer>
 

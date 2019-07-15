@@ -16,8 +16,8 @@
 #include <iostream>
 #include <QLocalSocket>
 #include <QMessageBox>
-#include <QNetworkRequest>
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
 
 #define LOGS_QUEUE_MAX_SIZE 100
 

@@ -2,7 +2,7 @@
 #define UNTAPPEDAPI_H
 
 #include <QObject>
-#include <QNetworkAccessManager>
+#include <QtNetwork/QNetworkAccessManager>
 
 class UntappedAPI : public QObject
 {

@@ -8,8 +8,8 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QJsonValueRef>
-#include <QNetworkRequest>
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
 #include <QStandardPaths>
 
 #define DECKS_ARCH_FILENAME "decksArch.json"

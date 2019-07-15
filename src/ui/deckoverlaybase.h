@@ -9,7 +9,7 @@
 #include <QPainter>
 #include <QPoint>
 #include <QMouseEvent>
-#include <QNetworkAccessManager>
+#include <QtNetwork/QNetworkAccessManager>
 
 namespace Ui { class TrackerOverlay; }
 

@@ -7,7 +7,7 @@
 #include <QJsonObject>
 #include <QList>
 #include <QMap>
-#include <QNetworkAccessManager>
+#include <QtNetwork/QNetworkAccessManager>
 #include <QObject>
 #include <QString>
 

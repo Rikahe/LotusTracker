@@ -9,8 +9,8 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QJsonValueRef>
-#include <QNetworkRequest>
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
 #include <QStandardPaths>
 #include <QUrl>
 #include <QUrlQuery>
