@@ -35,11 +35,11 @@ void TrayIcon::setupTrayIcon()
 
 #if defined Q_OS_MAC
     QIcon icon;
-    icon.addFile(":/res/icons/icon_black.png");
-    icon.addFile(":/res/icons/icon_black@2x.png");
+    icon.addFile(":/icons/icon_black.png");
+    icon.addFile(":/icons/icon_black@2x.png");
     icon.setIsMask(true);
-#elif defined Q_OS_WIN
-    QIcon icon = QIcon(":/res/icons/icon.ico");
+#else
+    QIcon icon = QIcon(":/icons/icon.ico");
 #endif
     trayIcon->setIcon(icon);
 

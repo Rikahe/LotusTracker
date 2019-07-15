@@ -7,6 +7,8 @@
 #elif defined Q_OS_WIN
 #include "../utils/winwindowfinder.h"
 #include <windows.h>
+#else
+#include "../utils/linuxwindowfinder.h"
 #endif
 
 #define MTG_ARENA_NAME "MTGA"
@@ -59,6 +61,10 @@ void MtgArena::findGameWindow()
     HWND wnd = WinWindowFinder::findWindow(MTG_ARENA_NAME, MTG_ARENA_TITLE);
     bool hasFind = wnd != NULL;
     bool hasFocus = WinWindowFinder::isWindowFocused(wnd);
+#else
+    int wndId = LinuxWindowFinder::findWindowId(MTG_ARENA_TITLE);
+    bool hasFind = wndId != 0;
+    bool hasFocus = LinuxWindowFinder::isWindowFocused(wndId);
 #endif
     if (!isRunning && hasFind) {
         emit sgnMTGAStarted();
@@ -85,6 +91,11 @@ void MtgArena::onCurrentFocusChanged(bool hasFocus)
     bool hasTrackerOverlayFocus = WinWindowFinder::isWindowFocused(wnd);
     wnd = WinWindowFinder::findWindow(NULL, preferencesTitle);
     bool hasLotusTrackerFocus = WinWindowFinder::isWindowFocused(wnd);
+#else 
+    int wndId = LinuxWindowFinder::findWindowId(overlayTitle);
+    bool hasTrackerOverlayFocus = LinuxWindowFinder::isWindowFocused(wndId);
+    wndId = LinuxWindowFinder::findWindowId(preferencesTitle);
+    bool hasLotusTrackerFocus = LinuxWindowFinder::isWindowFocused(wndId);
 #endif
     if (!hasFocus && (hasTrackerOverlayFocus || hasLotusTrackerFocus)) {
         return;

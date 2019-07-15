@@ -25,4 +25,5 @@
 #include "UVLADIE3JM/moc_urls.cpp"
 #include "VSCBVMNR7M/moc_appsecure.cpp"
 #include "VSCBVMNR7M/moc_appsettings.cpp"
+#include "VSCBVMNR7M/moc_linuxwindowfinder.cpp"
 #include "VSCBVMNR7M/moc_logger.cpp"

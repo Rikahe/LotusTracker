@@ -98,9 +98,9 @@ void DeckOverlayBase::setupDrawTools()
     bgPen = QPen(QColor(160, 160, 160));
     bgPen.setWidth(1);
 #if defined Q_OS_MAC
-    int belerenID = QFontDatabase::addApplicationFont(":/res/fonts/Beleren-Bold.ttf");
+    int belerenID = QFontDatabase::addApplicationFont(":/fonts/Beleren-Bold.ttf");
 #else
-    int belerenID = QFontDatabase::addApplicationFont(":/res/fonts/OpenSans-Regular.ttf");
+    int belerenID = QFontDatabase::addApplicationFont(":/fonts/OpenSans-Regular.ttf");
 #endif
     // Card
     cardFont.setFamily(QFontDatabase::applicationFontFamilies(belerenID).at(0));
@@ -226,9 +226,9 @@ void DeckOverlayBase::drawCover(QPainter &painter)
     bool coverImgLoaded = false;
     QImage coverImg;
     QString deckColorIdentity = getDeckColorIdentity();
-    coverImgLoaded = coverImg.load(QString(":/res/covers/%1.jpg").arg(deckColorIdentity));
+    coverImgLoaded = coverImg.load(QString(":/covers/%1.jpg").arg(deckColorIdentity));
     if (!coverImgLoaded) {
-        coverImg.load(":/res/covers/default.jpg");
+        coverImg.load(":/covers/default.jpg");
     }
     QSize coverImgSize(coverRect.width() - 1, coverRect.height() - 1);
     QImage coverImgScaled = coverImg.scaled(coverImgSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
@@ -249,14 +249,14 @@ void DeckOverlayBase::drawCoverButtons(QPainter &painter)
     int zoomButtonY = uiPos.y() + zoomButtonMargin;
     // Minus button
     int zoomMinusX = uiPos.x() + zoomButtonMargin + 2;
-    QImage zoomMinus(":res/zoom_minus.png");
+    QImage zoomMinus(":/zoom_minus.png");
     QImage zoomMinusScaled = zoomMinus.scaled(zoomButtonSize, zoomButtonSize,
                                               Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     painter.drawImage(zoomMinusX, zoomButtonY, zoomMinusScaled);
     zoomMinusButton = QRect(zoomMinusX, zoomButtonY, zoomButtonSize, zoomButtonSize);
     // Plus button
     int zoomPlusX = static_cast<int> (zoomMinusX + zoomButtonSize + zoomButtonMargin);
-    QImage zoomPlus(":res/zoom_plus.png");
+    QImage zoomPlus(":/zoom_plus.png");
     QImage zoomPlusScaled = zoomPlus.scaled(zoomButtonSize, zoomButtonSize,
                                             Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     painter.drawImage(zoomPlusX, zoomButtonY, zoomPlusScaled);
@@ -300,7 +300,7 @@ void DeckOverlayBase::drawDeckCards(QPainter &painter)
         beforeDrawCardEvent(painter, card, cardBGY);
         QImage cardBGImg;
         QString borderColorIdentity = card->borderColorIdentityAsString();
-        cardBGImg.load(QString(":/res/cards/%1/%2.png").arg(cardBGSkin).arg(borderColorIdentity));
+        cardBGImg.load(QString(":/cards/%1/%2.png").arg(cardBGSkin).arg(borderColorIdentity));
         QImage cardBGImgScaled = cardBGImg.scaled(cardBGImgSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         if (cardQtdRemains == 0 && useGrayscaleForZeroQtd()) {
             cardBGImgScaled = Transformations::toGrayscale(cardBGImgScaled);
@@ -371,7 +371,7 @@ void DeckOverlayBase::drawExpandBar(QPainter &painter)
     int expandButtonSize = 14;
     int expandButtonY = uiPos.y() + uiHeight;
     // Plus button
-    QImage expandPlus(":res/expand.png");
+    QImage expandPlus(":/expand.png");
     QImage expandPlusScaled = expandPlus.scaled(expandButtonSize, expandButtonSize,
                                                 Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     int expandPlusX = uiPos.x() + uiWidth/2 - expandButtonSize/2;
@@ -386,7 +386,7 @@ void DeckOverlayBase::drawHoverCard(QPainter &painter)
     }
     int bottomMargin = 10;
     QSize cardHoverSize(cardHoverWidth, cardHoverHeight);
-    QImage cardImg(":res/cardback.png");
+    QImage cardImg(":/cardback.png");
     QString imageFile = QString("%1%2%3.png").arg(cachesDir)
             .arg(QDir::separator()).arg(hoverCard->mtgaId);
     if (QFile::exists(imageFile)) {
@@ -440,7 +440,7 @@ void DeckOverlayBase::drawMana(QPainter &painter, QString manaSymbol, int manaSi
                                bool grayscale, int manaX, int manaY)
 {
     QImage manaImg;
-    manaImg.load(QString(":/res/mana/%1.png").arg(manaSymbol));
+    manaImg.load(QString(":/mana/%1.png").arg(manaSymbol));
     QImage manaImgScaled = manaImg.scaled(manaSize, manaSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     if (grayscale) {
         painter.drawImage(manaX, manaY, Transformations::toGrayscale(manaImgScaled));

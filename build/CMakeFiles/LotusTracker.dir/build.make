@@ -753,9 +753,33 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o.provides: CMakeFiles/LotusTr
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o.provides.build: CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o
 
 
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: CMakeFiles/LotusTracker.dir/flags.make
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: ../src/utils/linuxwindowfinder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o -c /home/lruegeme/tmp/mtga/LotusTracker/src/utils/linuxwindowfinder.cpp
+
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lruegeme/tmp/mtga/LotusTracker/src/utils/linuxwindowfinder.cpp > CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.i
+
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lruegeme/tmp/mtga/LotusTracker/src/utils/linuxwindowfinder.cpp -o CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.s
+
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o.requires:
+
+.PHONY : CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o.requires
+
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o.provides: CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LotusTracker.dir/build.make CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o.provides.build
+.PHONY : CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o.provides
+
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o.provides.build: CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o
+
+
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: CMakeFiles/LotusTracker.dir/flags.make
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o -c /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/mocs_compilation.cpp
 
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.i: cmake_force
@@ -779,7 +803,7 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o.provides
 
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o: CMakeFiles/LotusTracker.dir/flags.make
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o: LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o -c /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp
 
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.i: cmake_force
@@ -832,6 +856,7 @@ LotusTracker_OBJECTS = \
 "CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o" \
 "CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o" \
 "CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o" \
+"CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o" \
 "CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o"
 
@@ -867,16 +892,18 @@ LotusTracker: CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o
 LotusTracker: CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o
 LotusTracker: CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o
 LotusTracker: CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o
+LotusTracker: CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o
 LotusTracker: CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o
 LotusTracker: CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o
 LotusTracker: CMakeFiles/LotusTracker.dir/build.make
+LotusTracker: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.3
 LotusTracker: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.3
 LotusTracker: /vol/nexus/lib/x86_64-linux-gnu/libqt5keychain.so.0.9.90
 LotusTracker: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.3
 LotusTracker: /usr/lib/x86_64-linux-gnu/libQt5DBus.so.5.12.3
 LotusTracker: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.3
 LotusTracker: CMakeFiles/LotusTracker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX executable LotusTracker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable LotusTracker"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LotusTracker.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -913,6 +940,7 @@ CMakeFiles/LotusTracker.dir/requires: CMakeFiles/LotusTracker.dir/src/utils/apps
 CMakeFiles/LotusTracker.dir/requires: CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o.requires
 CMakeFiles/LotusTracker.dir/requires: CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o.requires
 CMakeFiles/LotusTracker.dir/requires: CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o.requires
+CMakeFiles/LotusTracker.dir/requires: CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o.requires
 CMakeFiles/LotusTracker.dir/requires: CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o.requires
 CMakeFiles/LotusTracker.dir/requires: CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o.requires
 

@@ -1,12 +1,19 @@
 cmake_minimum_required(VERSION 3.10)
-project(LotusTracker)
+project(LotusTracker
+	VERSION 1.3.1
+)
 
 set(CMAKE_CXX_STANDARD 11)
 
-find_package(Qt5Widgets COMPONENTS core gui network widgets REQUIRED)
-include_directories(${Qt5_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS} ${Qt5Network_INCLUDE_DIRS} ${Qt5Gui_INCLUDE_DIRS})
+find_package(Qt5 COMPONENTS Core Gui Network Widgets REQUIRED)
+include_directories(
+	${Qt5_INCLUDE_DIRS}
+	${Qt5Core_INCLUDE_DIRS}
+	${Qt5Gui_INCLUDE_DIRS}
+	${Qt5Network_INCLUDE_DIRS}
+	${Qt5Widgets_INCLUDE_DIRS}
+)
 
-find_package(Qt5Widgets COMPONENTS core gui network widgets REQUIRED)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -14,10 +21,15 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 find_package(Qt5Keychain REQUIRED)
-include_directories(QTKEYCHAIN_INCLUDE_DIRS)
+include_directories(${QTKEYCHAIN_INCLUDE_DIRS})
 
 
 include_directories(include)
+
+configure_file (
+    "${PROJECT_SOURCE_DIR}/src/config.h.in"
+    "${PROJECT_BINARY_DIR}/config.h"
+)
 
 ###############################################################################
 set(HEADERS 
@@ -67,6 +79,7 @@ set(HEADERS
 	src/utils/logger.h
 	src/utils/lotusexception.h
 	src/utils/metrics.h
+	src/utils/linuxwindowfinder.h
 	src/updater/sparkleupdater.h
 	src/credentials.h
 	src/ganalytics.h
@@ -106,6 +119,7 @@ set(SOURCES
 	src/utils/appsettings.cpp
 	src/utils/logger.cpp
 	src/utils/metrics.cpp
+	src/utils/linuxwindowfinder.cpp
 ) 
 
 set (UIS
@@ -129,4 +143,11 @@ add_executable(LotusTracker
 	${RESOURCES}
 )
 
-target_link_libraries(LotusTracker Qt5::Widgets ${QTKEYCHAIN_LIBRARIES})
+target_link_libraries(LotusTracker 
+	${Qt5Core_LIBRARIES}
+	${Qt5Gui_LIBRARIES}
+	${Qt5Network_LIBRARIES}
+	${Qt5Widgets_LIBRARIES}
+
+	${QTKEYCHAIN_LIBRARIES}
+)

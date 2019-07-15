@@ -30,6 +30,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o"
   "CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o"
   "CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o"
+  "CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o"
   "CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o"
   "LotusTracker.pdb"

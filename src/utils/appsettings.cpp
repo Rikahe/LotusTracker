@@ -162,7 +162,7 @@ QString AppSettings::getLogPath()
     QString userName = homeDir.right(homeDir.length() - homeDir.lastIndexOf(QDir::separator()) - 1);
     QString baseLogFilePath = "/Applications/MTGArena.app/Contents/Resources/drive_c/users";
     QString defaultLogPath = baseLogFilePath + QDir::separator() + userName + QDir::separator() + LOG_PATH;
-#elif defined Q_OS_WIN
+#else
     QString homeDir = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
     QString defaultLogPath = homeDir + QDir::separator() + LOG_PATH;
 #endif

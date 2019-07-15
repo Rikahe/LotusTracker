@@ -14,20 +14,15 @@
 #endif
 
 #include <iostream>
-#include <QLocalSocket>
+#include <QtNetwork/QLocalSocket>
 #include <QMessageBox>
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 
 #define LOGS_QUEUE_MAX_SIZE 100
 
-LotusTracker::LotusTracker(int& argc, char **argv): QApplication(argc, argv),
-    crow_client(nullptr)
+LotusTracker::LotusTracker(int& argc, char **argv): QApplication(argc, argv)
 {
-#ifdef QT_NO_DEBUG
-    std::cout << "Initializing crow";
-    crow_client = new nlohmann::crow(CREDENTIALS::GA_SENTRY_DSN().toStdString());
-#endif
     setupApp();
     setupUpdater();
     isOnDraftScreen = false;
@@ -116,9 +111,6 @@ LotusTracker::~LotusTracker()
     DEL(mtgaMatch)
     DEL(lotusAPI)
     DEL(gaTracker)
-    if (crow_client) {
-        crow_client->~crow();
-    }
 }
 
 int LotusTracker::run()
@@ -135,10 +127,12 @@ void LotusTracker::setupApp()
 {
 #if defined Q_OS_MAC
   setAttribute(Qt::AA_UseHighDpiPixmaps);
-  QIcon icon(":/res/icon_black.png");
-  icon.addFile(":/res/icon_black@2x.png");
+  QIcon icon(":/icon_black.png");
+  icon.addFile(":/icon_black@2x.png");
 #elif defined Q_OS_WIN
-  QIcon icon(":/res/icon.ico");
+  QIcon icon(":/icon.ico");
+#else
+  QIcon icon(":/icon.ico");
 #endif
   setAttribute(Qt::AA_Use96Dpi);
   setApplicationName(APP_NAME);
@@ -416,13 +410,6 @@ void LotusTracker::trackException(LotusException ex)
 {
     qDebug() << ex.what();
     gaTracker->sendException(ex.what());
-#ifdef QT_NO_DEBUG
-    while (logsQueue.size() > 0) {
-        QString msg = logsQueue.dequeue();
-        crow_client->add_breadcrumb(msg.toStdString());
-    }
-    crow_client->capture_exception(ex);
-#endif
 }
 
 void LotusTracker::onPlayerCollectionUpdated(QMap<int, int> ownedCards)

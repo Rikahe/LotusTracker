@@ -4,8 +4,6 @@
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/PA7CP7W2FZ/moc_lotusapi.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/PA7CP7W2FZ/moc_untappedapi.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/UVLADIE3JM/moc_credentials.cpp
@@ -14,6 +12,7 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/UVLADIE3JM/moc_urls.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/VSCBVMNR7M/moc_appsecure.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/VSCBVMNR7M/moc_appsettings.cpp
+ /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/VSCBVMNR7M/moc_linuxwindowfinder.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/VSCBVMNR7M/moc_logger.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/VWXI2NPSZH/moc_mtgalogparser.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/VWXI2NPSZH/moc_mtgalogwatcher.cpp
@@ -74,6 +73,7 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o
  /home/lruegeme/tmp/mtga/LotusTracker/src/urls.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/appsecure.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/appsettings.h
+ /home/lruegeme/tmp/mtga/LotusTracker/src/utils/linuxwindowfinder.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/logger.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/lotusexception.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QBuffer
@@ -190,7 +190,6 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -262,9 +261,8 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
@@ -327,6 +325,7 @@ CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -432,7 +431,6 @@ CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -507,9 +505,8 @@ CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -564,6 +561,7 @@ CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -669,7 +667,6 @@ CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -744,9 +741,8 @@ CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -799,6 +795,7 @@ CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -904,7 +901,6 @@ CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -976,9 +972,8 @@ CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -1031,6 +1026,7 @@ CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -1136,7 +1132,6 @@ CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -1208,6 +1203,7 @@ CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ganalytics.cpp.o
  /home/lruegeme/tmp/mtga/LotusTracker/src/ganalytics.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/ganalytics.h
@@ -1349,8 +1345,6 @@ CMakeFiles/LotusTracker.dir/src/ganalytics.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
  LotusTracker_autogen/include/ganalytics.moc
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -1412,6 +1406,7 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -1517,7 +1512,6 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -1554,15 +1548,18 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QHostInfo
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QLocalServer
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QLocalSocket
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkAccessManager
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkReply
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkRequest
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslConfiguration
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslPreSharedKeyAuthenticator
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QUdpSocket
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostaddress.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostinfo.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qlocalserver.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qlocalsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkaccessmanager.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkreply.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkrequest.h
@@ -1575,6 +1572,7 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtcpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetwork-config.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qudpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QAction
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
@@ -1598,9 +1596,8 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/main.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -1654,6 +1651,7 @@ CMakeFiles/LotusTracker.dir/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -1759,7 +1757,6 @@ CMakeFiles/LotusTracker.dir/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -1834,9 +1831,8 @@ CMakeFiles/LotusTracker.dir/src/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -1889,6 +1885,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -1994,7 +1991,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -2066,9 +2062,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -2124,6 +2119,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -2231,7 +2227,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -2303,9 +2298,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -2358,6 +2352,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -2463,7 +2458,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -2535,9 +2529,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -2579,6 +2572,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o
  /home/lruegeme/tmp/mtga/LotusTracker/src/updater/sparkleupdater.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/appsecure.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/appsettings.h
+ /home/lruegeme/tmp/mtga/LotusTracker/src/utils/linuxwindowfinder.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/logger.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/lotusexception.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/macwindowfinder.h
@@ -2591,6 +2585,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -2696,7 +2691,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -2768,9 +2762,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -2830,6 +2823,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonValueRef
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -2941,7 +2935,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3016,9 +3009,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -3077,6 +3069,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonValueRef
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -3186,7 +3179,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3261,9 +3253,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -3317,6 +3308,7 @@ CMakeFiles/LotusTracker.dir/src/transformations.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonParseError
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -3422,7 +3414,6 @@ CMakeFiles/LotusTracker.dir/src/transformations.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3494,9 +3485,8 @@ CMakeFiles/LotusTracker.dir/src/transformations.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -3551,6 +3541,7 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -3662,7 +3653,6 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3744,9 +3734,8 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
  LotusTracker_autogen/include/ui_decktrackerbase.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -3799,6 +3788,7 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -3907,7 +3897,6 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3983,9 +3972,8 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -4038,6 +4026,7 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -4143,7 +4132,6 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -4215,9 +4203,8 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -4271,6 +4258,7 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -4381,7 +4369,6 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QDesktopServices
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -4458,9 +4445,8 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -4513,6 +4499,7 @@ CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -4618,7 +4605,6 @@ CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -4700,9 +4686,8 @@ CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
  LotusTracker_autogen/include/ui_preferences.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -4755,6 +4740,7 @@ CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -4862,7 +4848,6 @@ CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QIcon
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -4952,9 +4937,8 @@ CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
  LotusTracker_autogen/include/ui_start.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -5007,6 +4991,7 @@ CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -5113,7 +5098,6 @@ CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -5197,9 +5181,8 @@ CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
  LotusTracker_autogen/include/ui_tababout.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -5255,6 +5238,7 @@ CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -5364,7 +5348,6 @@ CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -5462,9 +5445,8 @@ CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
  LotusTracker_autogen/include/ui_tabgeneral.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -5517,6 +5499,7 @@ CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -5622,7 +5605,6 @@ CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qabstracttextdocumentlayout.h
@@ -5716,9 +5698,8 @@ CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
  LotusTracker_autogen/include/ui_tablogs.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -5771,6 +5752,7 @@ CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -5876,7 +5858,6 @@ CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -5967,9 +5948,8 @@ CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
  LotusTracker_autogen/include/ui_taboverlay.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -6024,6 +6004,7 @@ CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -6133,7 +6114,6 @@ CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QDesktopServices
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -6209,9 +6189,8 @@ CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -6264,6 +6243,7 @@ CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -6369,7 +6349,6 @@ CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -6441,9 +6420,8 @@ CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -6497,6 +6475,7 @@ CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -6608,7 +6587,6 @@ CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -6681,6 +6659,122 @@ CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o
+ /home/lruegeme/tmp/mtga/LotusTracker/src/utils/linuxwindowfinder.cpp
+ /home/lruegeme/tmp/mtga/LotusTracker/src/utils/linuxwindowfinder.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QProcess
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_msvc.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmutex.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocess.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringbuilder.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringliteral.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringview.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainterpath.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/logger.cpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/utils/logger.h
@@ -6805,8 +6899,6 @@ CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o
- ../include/crow/crow.hpp
- ../include/thirdparty/json/json.hpp
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/lotusapi.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/requestdata.h
  /home/lruegeme/tmp/mtga/LotusTracker/src/api/rqtuploadplayermatch.h
@@ -6861,6 +6953,7 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -6966,7 +7059,6 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -7006,6 +7098,7 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkAccessManager
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslConfiguration
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslPreSharedKeyAuthenticator
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QUdpSocket
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostaddress.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostinfo.h
@@ -7021,6 +7114,7 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtcpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetwork-config.h
  /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
+ /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qudpsocket.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QAction
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
@@ -7041,3 +7135,4 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
  /vol/nexus/include/qt5keychain/keychain.h
  /vol/nexus/include/qt5keychain/qkeychain_export.h
+ config.h

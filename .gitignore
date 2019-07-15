@@ -1,17 +1,5 @@
 
-build/*.*
-!build/PlayerDeckSubmit.txt
-!build/PlayerDeckSideboard.txt
-tmp/
-src/credentials.h
-dist/win/*.exe
-dist/win/*.zip
-dist/win/files
-dist/osx/*.dmg
-dist/osx/build
-dist/osx/node_modules
-dist/osx/package.json
-dist/osx/yarn.lock
+build
 
 .vscode
 

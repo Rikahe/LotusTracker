@@ -18,7 +18,7 @@
 
 #if defined Q_OS_MAC
 #define LOG_FILE_FILTER "Magic Arena app (*.app);;Arena Log (output_log.txt)"
-#elif defined Q_OS_WIN
+#else
 #define LOG_FILE_FILTER "Arena Log (output_log.txt)"
 #endif
 
@@ -63,14 +63,14 @@ TabGeneral::~TabGeneral()
 
 void TabGeneral::applyCurrentSettings()
 {
-    ui->leLog->setText(LOTUS_TRACKER->appSettings->getLogPath());
-    ui->cbStartAtLogin->setChecked(APP_SETTINGS->isAutoStartEnabled());
-    ui->btCheckUpdate->setChecked(LOTUS_TRACKER->sparkleUpdater->AutomaticallyChecksForUpdates());
-    ui->cbPOEnabled->setChecked(APP_SETTINGS->isDeckOverlayPlayerEnabled());
-    ui->cbOOEnabled->setChecked(APP_SETTINGS->isDeckOverlayOpponentEnabled());
-    ui->cbSDADEnabled->setChecked(APP_SETTINGS->isShowDeckAfterDraftEnabled());
-    ui->cbDOEnabled->setChecked(APP_SETTINGS->isDeckOverlayDraftEnabled());
-    ui->cbHideOnLoseGameFocus->setChecked(APP_SETTINGS->isHideOnLoseGameFocusEnabled());
+    // ui->leLog->setText(APP_SETTINGS->getLogPath());
+    // ui->cbStartAtLogin->setChecked(APP_SETTINGS->isAutoStartEnabled());
+    // ui->btCheckUpdate->setChecked(LOTUS_TRACKER->sparkleUpdater->AutomaticallyChecksForUpdates());
+    // ui->cbPOEnabled->setChecked(APP_SETTINGS->isDeckOverlayPlayerEnabled());
+    // ui->cbOOEnabled->setChecked(APP_SETTINGS->isDeckOverlayOpponentEnabled());
+    // ui->cbSDADEnabled->setChecked(APP_SETTINGS->isShowDeckAfterDraftEnabled());
+    // ui->cbDOEnabled->setChecked(APP_SETTINGS->isDeckOverlayDraftEnabled());
+    // ui->cbHideOnLoseGameFocus->setChecked(APP_SETTINGS->isHideOnLoseGameFocusEnabled());
 }
 
 void TabGeneral::onStartAtLoginChanged()

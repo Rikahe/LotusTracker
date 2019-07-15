@@ -194,7 +194,7 @@ void DeckOverlayDraft::afterPaintEvent(QPainter &painter)
     int buttonMarginX = 3;
     int buttonMarginY = 2;
     int preferencesButtonY = uiPos.y() + buttonMarginY;
-    QImage settings(":res/preferences.png");
+    QImage settings(":/preferences.png");
     QImage settingsScaled = settings.scaled(buttonSize, buttonSize,
                                             Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     int settingsPlusX = uiPos.x() + uiWidth - buttonSize - buttonMarginX;

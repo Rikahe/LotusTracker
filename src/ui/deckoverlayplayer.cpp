@@ -10,7 +10,7 @@
 #include <QToolTip>
 
 DeckOverlayPlayer::DeckOverlayPlayer(QWidget *parent) : DeckOverlayBase(parent),
-    deckMenu(new QMenu()), publishingDeckIcon(":res/publish_deck.png"),
+    deckMenu(new QMenu()), publishingDeckIcon(":/publish_deck.png"),
     eventName("-"), deckWins(0), deckLosses(0)
 {
     deckProfileAction = new QAction(tr("Deck Profile"), this);
@@ -51,7 +51,7 @@ DeckOverlayPlayer::DeckOverlayPlayer(QWidget *parent) : DeckOverlayBase(parent),
     statisticsFontSize += 2;
     winrateFontSize += 2;
 #endif
-    int belerenID = QFontDatabase::addApplicationFont(":/res/fonts/Beleren-Bold.ttf");
+    int belerenID = QFontDatabase::addApplicationFont(":/fonts/Beleren-Bold.ttf");
     statisticsFont.setFamily(QFontDatabase::applicationFontFamilies(belerenID).at(0));
     statisticsFont.setPointSize(statisticsFontSize);
     statisticsPen = QPen(Qt::white);
@@ -89,7 +89,7 @@ void DeckOverlayPlayer::onLotusAPIRequestFinishedWithError()
 void DeckOverlayPlayer::stopPublishDeckAnimation()
 {
     publishDeckTimer->stop();
-    publishingDeckIcon = ":res/publish_deck.png";
+    publishingDeckIcon = ":/publish_deck.png";
 }
 
 void DeckOverlayPlayer::onPositionChanged()
@@ -113,7 +113,7 @@ void DeckOverlayPlayer::afterPaintEvent(QPainter &painter)
     int buttonMarginX = 3;
     int buttonMarginY = 2;
     int preferencesButtonY = uiPos.y() + buttonMarginY;
-    QImage settings(":res/preferences.png");
+    QImage settings(":/preferences.png");
     QImage settingsScaled = settings.scaled(buttonSize, buttonSize,
                                             Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     int settingsPlusX = uiPos.x() + uiWidth - buttonSize - buttonMarginX;
@@ -156,29 +156,29 @@ void DeckOverlayPlayer::applyCurrentSettings()
 
 void DeckOverlayPlayer::publishingDeckAnim()
 {
-    if (publishingDeckIcon == ":res/publish_deck_anim7.png") {
-        publishingDeckIcon = ":res/publish_deck.png";
+    if (publishingDeckIcon == ":/publish_deck_anim7.png") {
+        publishingDeckIcon = ":/publish_deck.png";
     }
-    if (publishingDeckIcon == ":res/publish_deck_anim6.png") {
-        publishingDeckIcon = ":res/publish_deck_anim7.png";
+    if (publishingDeckIcon == ":/publish_deck_anim6.png") {
+        publishingDeckIcon = ":/publish_deck_anim7.png";
     }
-    if (publishingDeckIcon == ":res/publish_deck_anim5.png") {
-        publishingDeckIcon = ":res/publish_deck_anim6.png";
+    if (publishingDeckIcon == ":/publish_deck_anim5.png") {
+        publishingDeckIcon = ":/publish_deck_anim6.png";
     }
-    if (publishingDeckIcon == ":res/publish_deck_anim4.png") {
-        publishingDeckIcon = ":res/publish_deck_anim5.png";
+    if (publishingDeckIcon == ":/publish_deck_anim4.png") {
+        publishingDeckIcon = ":/publish_deck_anim5.png";
     }
-    if (publishingDeckIcon == ":res/publish_deck_anim3.png") {
-        publishingDeckIcon = ":res/publish_deck_anim4.png";
+    if (publishingDeckIcon == ":/publish_deck_anim3.png") {
+        publishingDeckIcon = ":/publish_deck_anim4.png";
     }
-    if (publishingDeckIcon == ":res/publish_deck_anim2.png") {
-        publishingDeckIcon = ":res/publish_deck_anim3.png";
+    if (publishingDeckIcon == ":/publish_deck_anim2.png") {
+        publishingDeckIcon = ":/publish_deck_anim3.png";
     }
-    if (publishingDeckIcon == ":res/publish_deck_anim1.png") {
-        publishingDeckIcon = ":res/publish_deck_anim2.png";
+    if (publishingDeckIcon == ":/publish_deck_anim1.png") {
+        publishingDeckIcon = ":/publish_deck_anim2.png";
     }
-    if (publishingDeckIcon == ":res/publish_deck.png") {
-        publishingDeckIcon = ":res/publish_deck_anim1.png";
+    if (publishingDeckIcon == ":/publish_deck.png") {
+        publishingDeckIcon = ":/publish_deck_anim1.png";
     }
     update();
 }

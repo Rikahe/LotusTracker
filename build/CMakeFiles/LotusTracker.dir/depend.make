@@ -3,8 +3,6 @@
 
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp.o: LotusTracker_autogen/PNK5WDWK6L/qrc_resources.cpp
 
-CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/PA7CP7W2FZ/moc_lotusapi.cpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/PA7CP7W2FZ/moc_untappedapi.cpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/UVLADIE3JM/moc_credentials.cpp
@@ -13,6 +11,7 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTr
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/UVLADIE3JM/moc_urls.cpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/VSCBVMNR7M/moc_appsecure.cpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/VSCBVMNR7M/moc_appsettings.cpp
+CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/VSCBVMNR7M/moc_linuxwindowfinder.cpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/VSCBVMNR7M/moc_logger.cpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/VWXI2NPSZH/moc_mtgalogparser.cpp
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: LotusTracker_autogen/VWXI2NPSZH/moc_mtgalogwatcher.cpp
@@ -73,6 +72,7 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../src/
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../src/urls.h
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../src/utils/appsecure.h
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../src/utils/appsettings.h
+CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../src/utils/linuxwindowfinder.h
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../src/utils/logger.h
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: ../src/utils/lotusexception.h
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QBuffer
@@ -189,7 +189,6 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/in
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -261,9 +260,8 @@ CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/in
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/LotusTracker_autogen/mocs_compilation.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: ../src/api/lotusapi.cpp
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: ../src/api/requestdata.h
@@ -326,6 +324,7 @@ CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -431,7 +430,6 @@ CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -506,9 +504,8 @@ CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/api/lotusapi.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -563,6 +560,7 @@ CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -668,7 +666,6 @@ CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -743,9 +740,8 @@ CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/api/untappedapi.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -798,6 +794,7 @@ CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -903,7 +900,6 @@ CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -975,9 +971,8 @@ CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/entity/deck.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -1030,6 +1025,7 @@ CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -1135,7 +1131,6 @@ CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -1207,6 +1202,7 @@ CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/entity/matchinfo.cpp.o: config.h
 
 CMakeFiles/LotusTracker.dir/src/ganalytics.cpp.o: ../src/ganalytics.cpp
 CMakeFiles/LotusTracker.dir/src/ganalytics.cpp.o: ../src/ganalytics.h
@@ -1348,8 +1344,6 @@ CMakeFiles/LotusTracker.dir/src/ganalytics.cpp.o: /usr/include/x86_64-linux-gnu/
 CMakeFiles/LotusTracker.dir/src/ganalytics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
 CMakeFiles/LotusTracker.dir/src/ganalytics.cpp.o: LotusTracker_autogen/include/ganalytics.moc
 
-CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -1411,6 +1405,7 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -1516,7 +1511,6 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -1553,15 +1547,18 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QHostInfo
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QLocalServer
+CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QLocalSocket
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkAccessManager
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkReply
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkRequest
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslConfiguration
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslPreSharedKeyAuthenticator
+CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QUdpSocket
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostaddress.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostinfo.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qlocalserver.h
+CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qlocalsocket.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkaccessmanager.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkreply.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qnetworkrequest.h
@@ -1574,6 +1571,7 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtcpsocket.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetwork-config.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
+CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qudpsocket.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QAction
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
@@ -1597,9 +1595,8 @@ CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/lotustracker.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/main.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/main.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -1653,6 +1650,7 @@ CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/Qt
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -1758,7 +1756,6 @@ CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/Qt
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -1833,9 +1830,8 @@ CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/Qt
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/main.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/main.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -1888,6 +1884,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -1993,7 +1990,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -2065,9 +2061,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/mtg/mtgalogparser.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -2123,6 +2118,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-li
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -2230,7 +2226,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-li
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -2302,9 +2297,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-li
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/mtg/mtgalogwatcher.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -2357,6 +2351,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -2462,7 +2457,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -2534,9 +2528,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/mtg/mtgamatch.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -2578,6 +2571,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/ui/trayicon.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/updater/sparkleupdater.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/utils/appsecure.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/utils/appsettings.h
+CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/utils/linuxwindowfinder.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/utils/logger.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/utils/lotusexception.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: ../src/utils/macwindowfinder.h
@@ -2590,6 +2584,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -2695,7 +2690,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -2767,9 +2761,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/mtg/mtgarena.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -2829,6 +2822,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonValueRef
+CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -2940,7 +2934,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3015,9 +3008,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/mtg/mtgcards.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -3076,6 +3068,7 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonValueRef
+CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -3185,7 +3178,6 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3260,9 +3252,8 @@ CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/mtg/mtgdecksarch.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -3316,6 +3307,7 @@ CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonParseError
+CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -3421,7 +3413,6 @@ CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3493,9 +3484,8 @@ CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/transformations.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -3550,6 +3540,7 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-li
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -3661,7 +3652,6 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-li
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3743,9 +3733,8 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /usr/include/x86_64-li
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: LotusTracker_autogen/include/ui_decktrackerbase.h
+CMakeFiles/LotusTracker.dir/src/ui/deckoverlaybase.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -3798,6 +3787,7 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-l
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -3906,7 +3896,6 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-l
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -3982,9 +3971,8 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-l
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/ui/deckoverlaydraft.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -4037,6 +4025,7 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_6
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -4142,7 +4131,6 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_6
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -4214,9 +4202,8 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_6
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/ui/deckoverlayopponent.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -4270,6 +4257,7 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -4380,7 +4368,6 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QDesktopServices
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -4457,9 +4444,8 @@ CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/ui/deckoverlayplayer.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -4512,6 +4498,7 @@ CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -4617,7 +4604,6 @@ CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -4699,9 +4685,8 @@ CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /usr/include/x86_64-
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
 CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: LotusTracker_autogen/include/ui_preferences.h
+CMakeFiles/LotusTracker.dir/src/ui/preferencesscreen.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -4754,6 +4739,7 @@ CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -4861,7 +4847,6 @@ CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QIcon
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -4951,9 +4936,8 @@ CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
 CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: LotusTracker_autogen/include/ui_start.h
+CMakeFiles/LotusTracker.dir/src/ui/startscreen.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -5006,6 +4990,7 @@ CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -5112,7 +5097,6 @@ CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -5196,9 +5180,8 @@ CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
 CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: LotusTracker_autogen/include/ui_tababout.h
+CMakeFiles/LotusTracker.dir/src/ui/tababout.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -5254,6 +5237,7 @@ CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -5363,7 +5347,6 @@ CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -5461,9 +5444,8 @@ CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
 CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: LotusTracker_autogen/include/ui_tabgeneral.h
+CMakeFiles/LotusTracker.dir/src/ui/tabgeneral.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -5516,6 +5498,7 @@ CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -5621,7 +5604,6 @@ CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qabstracttextdocumentlayout.h
@@ -5715,9 +5697,8 @@ CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /usr/include/x86_64-linux-gnu/
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
 CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: LotusTracker_autogen/include/ui_tablogs.h
+CMakeFiles/LotusTracker.dir/src/ui/tablogs.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -5770,6 +5751,7 @@ CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -5875,7 +5857,6 @@ CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -5966,9 +5947,8 @@ CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
 CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: LotusTracker_autogen/include/ui_taboverlay.h
+CMakeFiles/LotusTracker.dir/src/ui/taboverlay.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -6023,6 +6003,7 @@ CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -6132,7 +6113,6 @@ CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QDesktopServices
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -6208,9 +6188,8 @@ CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -6263,6 +6242,7 @@ CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -6368,7 +6348,6 @@ CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -6440,9 +6419,8 @@ CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o: config.h
 
-CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -6496,6 +6474,7 @@ CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -6607,7 +6586,6 @@ CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -6680,6 +6658,122 @@ CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o: config.h
+
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: ../src/utils/linuxwindowfinder.cpp
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: ../src/utils/linuxwindowfinder.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QProcess
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_msvc.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qmutex.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocess.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringbuilder.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringliteral.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringview.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qurlquery.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainterpath.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
+CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 
 CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o: ../src/utils/logger.cpp
 CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o: ../src/utils/logger.h
@@ -6804,8 +6898,6 @@ CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o: /usr/include/x86_64-linux-gn
 CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 
-CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: ../include/crow/crow.hpp
-CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: ../include/thirdparty/json/json.hpp
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: ../src/api/lotusapi.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: ../src/api/requestdata.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: ../src/api/rqtuploadplayermatch.h
@@ -6860,6 +6952,7 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject
+CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QMetaType
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
@@ -6965,7 +7058,6 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QCloseEvent
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
-CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
@@ -7005,6 +7097,7 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QNetworkAccessManager
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslConfiguration
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QSslPreSharedKeyAuthenticator
+CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/QUdpSocket
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qabstractsocket.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostaddress.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qhostinfo.h
@@ -7020,6 +7113,7 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtcpsocket.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetwork-config.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qtnetworkglobal.h
+CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtNetwork/qudpsocket.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QAction
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
@@ -7040,4 +7134,5 @@ CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /vol/nexus/include/qt5keychain/keychain.h
 CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: /vol/nexus/include/qt5keychain/qkeychain_export.h
+CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o: config.h
 

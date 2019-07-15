@@ -6,7 +6,6 @@
 #include "asmCrashReport.h"
 #endif
 
-#include <crow/crow.hpp>
 #include <QMessageBox>
 
 int main(int argc, char *argv[])

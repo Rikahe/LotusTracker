@@ -1,6 +1,8 @@
 #ifndef ARENATRACKER_H
 #define ARENATRACKER_H
 
+#include "config.h"
+
 #include "api/lotusapi.h"
 #include "api/untappedapi.h"
 #include "entity/matchinfo.h"
@@ -22,7 +24,6 @@
 #include "credentials.h"
 #include "ganalytics.h"
 
-#include <crow/crow.hpp>
 #include <QApplication>
 #include <QtNetwork/QLocalServer>
 #include <QQueue>
@@ -33,7 +34,6 @@ class LotusTracker : public QApplication
     Q_OBJECT
 
 private:
-    nlohmann::crow *crow_client;
     QQueue<QString> logsQueue;
     QLocalServer *localServer;
     DeckOverlayPlayer *deckOverlayPlayer;

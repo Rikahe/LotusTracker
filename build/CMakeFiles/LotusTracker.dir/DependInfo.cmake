@@ -33,6 +33,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lruegeme/tmp/mtga/LotusTracker/src/ui/trayicon.cpp" "/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/LotusTracker.dir/src/ui/trayicon.cpp.o"
   "/home/lruegeme/tmp/mtga/LotusTracker/src/utils/appsecure.cpp" "/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/LotusTracker.dir/src/utils/appsecure.cpp.o"
   "/home/lruegeme/tmp/mtga/LotusTracker/src/utils/appsettings.cpp" "/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/LotusTracker.dir/src/utils/appsettings.cpp.o"
+  "/home/lruegeme/tmp/mtga/LotusTracker/src/utils/linuxwindowfinder.cpp" "/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/LotusTracker.dir/src/utils/linuxwindowfinder.cpp.o"
   "/home/lruegeme/tmp/mtga/LotusTracker/src/utils/logger.cpp" "/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/LotusTracker.dir/src/utils/logger.cpp.o"
   "/home/lruegeme/tmp/mtga/LotusTracker/src/utils/metrics.cpp" "/home/lruegeme/tmp/mtga/LotusTracker/build/CMakeFiles/LotusTracker.dir/src/utils/metrics.cpp.o"
   )
@@ -43,6 +44,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "QT_CORE_LIB"
   "QT_DBUS_LIB"
   "QT_GUI_LIB"
+  "QT_NETWORK_LIB"
   "QT_NO_DEBUG"
   "QT_WIDGETS_LIB"
   )
@@ -53,13 +55,13 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../"
   "LotusTracker_autogen/include"
   "/usr/include/x86_64-linux-gnu/qt5"
-  "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
-  "/usr/include/x86_64-linux-gnu/qt5/QtGui"
   "/usr/include/x86_64-linux-gnu/qt5/QtCore"
   "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"
-  "../QTKEYCHAIN_INCLUDE_DIRS"
-  "../include"
+  "/usr/include/x86_64-linux-gnu/qt5/QtGui"
+  "/usr/include/x86_64-linux-gnu/qt5/QtNetwork"
+  "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
   "/vol/nexus/include"
+  "../include"
   "/usr/include/x86_64-linux-gnu/qt5/QtDBus"
   )
 

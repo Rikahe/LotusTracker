@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =   -fPIC -std=gnu++11
 
-CXX_DEFINES = -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+CXX_DEFINES = -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/home/lruegeme/tmp/mtga/LotusTracker/build -I/home/lruegeme/tmp/mtga/LotusTracker -I/home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/lruegeme/tmp/mtga/LotusTracker/QTKEYCHAIN_INCLUDE_DIRS -I/home/lruegeme/tmp/mtga/LotusTracker/include -isystem /vol/nexus/include -isystem /usr/include/x86_64-linux-gnu/qt5/QtDBus 
+CXX_INCLUDES = -I/home/lruegeme/tmp/mtga/LotusTracker/build -I/home/lruegeme/tmp/mtga/LotusTracker -I/home/lruegeme/tmp/mtga/LotusTracker/build/LotusTracker_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /vol/nexus/include -I/home/lruegeme/tmp/mtga/LotusTracker/include -isystem /usr/include/x86_64-linux-gnu/qt5/QtDBus 
 

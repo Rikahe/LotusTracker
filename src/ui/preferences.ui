@@ -87,7 +87,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../resources.qrc">
-     <normaloff>:/res/preferences_general.png</normaloff>:/res/preferences_general.png</iconset>
+     <normaloff>:/preferences_general.png</normaloff>:/preferences_general.png</iconset>
    </property>
    <property name="text">
     <string>Settings</string>
@@ -102,7 +102,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../resources.qrc">
-     <normaloff>:/res/preferences_logs.png</normaloff>:/res/preferences_logs.png</iconset>
+     <normaloff>:/preferences_logs.png</normaloff>:/preferences_logs.png</iconset>
    </property>
    <property name="text">
     <string>Log</string>
@@ -114,7 +114,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../resources.qrc">
-     <normaloff>:/res/preferences_about.png</normaloff>:/res/preferences_about.png</iconset>
+     <normaloff>:/preferences_about.png</normaloff>:/preferences_about.png</iconset>
    </property>
    <property name="text">
     <string>About</string>
@@ -129,7 +129,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../resources.qrc">
-     <normaloff>:/res/preferences_overlay.png</normaloff>:/res/preferences_overlay.png</iconset>
+     <normaloff>:/preferences_overlay.png</normaloff>:/preferences_overlay.png</iconset>
    </property>
    <property name="text">
     <string>Overlay</string>

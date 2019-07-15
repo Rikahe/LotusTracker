@@ -13,7 +13,7 @@ StartScreen::StartScreen(QWidget *parent, LotusTrackerAPI *lotusAPI) : QMainWind
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
-    int belerenID = QFontDatabase::addApplicationFont(":/res/fonts/Beleren-Bold.ttf");
+    int belerenID = QFontDatabase::addApplicationFont(":/fonts/Beleren-Bold.ttf");
     QFont trackerFont = ui->lbTracker->font();
     trackerFont.setFamily(QFontDatabase::applicationFontFamilies(belerenID).at(0));
     ui->lbTracker->setFont(trackerFont);
